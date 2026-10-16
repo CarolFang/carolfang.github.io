@@ -1,0 +1,6 @@
+{
+  "liveServer.settings.root": "/site",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}
