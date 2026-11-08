@@ -149,3 +149,7 @@ vite.config.ts.timestamp-*
 .turbo
 
 site/assets/css/style.css
+
+.DS_Store
+/Claude outputs
+/drafts

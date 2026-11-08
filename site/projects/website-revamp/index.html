@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="zh-Hant" class="motion-safe:scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BQool 官網改版｜Carol Fang</title>
+  <meta name="description" content="BQool 官網改版 case study：先以單頁 A/B 測試驗證新視覺（轉換率約為原版 1.7 倍），再以漸進式 CSS 架構延伸至全站。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <!-- 只用在「目標」卡片的 1、2、3，用 text= 參數只下載這三個字元 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&text=123&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/lang.js" defer></script>
+  <script src="/assets/js/embed-fullscreen.js" defer></script>
+</head>
+<body class="bg-white font-sans leading-[1.6] text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:bg-white focus:px-4 focus:py-2" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a>
+
+  <!-- ========== Header（三頁共用，修改時請同步；本頁寬度改為 max-w-7xl 以對齊內文） ========== -->
+  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
+    <nav aria-label="主選單" class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4">
+      <!-- 暫時：首頁尚未公開，品牌先不連結。恢復時改回 <a href="/" class="text-sm tracking-widest text-neutral-600 uppercase">Carol Fang</a> -->
+      <span class="text-sm tracking-widest text-neutral-600 uppercase">Carol Fang</span>
+      <!-- ===== 暫時隱藏 START：只公開本頁期間不顯示導覽與中英切換；恢復時刪掉這一行與下方 END 那一行 =====
+      <ul class="hidden gap-8 text-sm text-neutral-600 md:flex">
+        <li><a href="/#work" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="作品" data-en="Work">作品</a></li>
+        <li><a href="/#about" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="/#experience" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="經歷" data-en="Experience">經歷</a></li>
+        <li><a href="/#contact" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="聯繫" data-en="Contact">聯繫</a></li>
+      </ul>
+      <div role="group" aria-label="語言 Language" class="flex overflow-hidden rounded-full border border-neutral-900 text-xs">
+        <button type="button" data-lang-btn="zh" aria-pressed="true" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">中</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false" lang="en" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">EN</button>
+      </div>
+      ===== 暫時隱藏 END ===== -->
+    </nav>
+  </header>
+
+  <main id="main">
+    <article>
+      <!-- ========== 專案開頭：Hero（標題、摘要、專案資訊｜主視覺） ========== -->
+      <header class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 md:py-20">
+        <!-- Hero：lg（1024px）以上左右兩欄各半（lg:grid-cols-2），以下上下排列避免平板過擠，欄距 32px（gap-8）；items-end 讓右側圖片與左側專案資訊卡底部對齊 -->
+        <div class="grid items-end gap-8 lg:grid-cols-2">
+          <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-4">
+              <h1 class="text-3xl leading-[1.2] font-bold md:text-[2.5rem]">BQool 官網改版</h1>
+              <p class="text-xl text-muted-foreground md:text-2xl">設計系統規劃 × 視覺改版 × 前端工程落地</p>
+              <div>
+                <p>三個月內獨立完成官網視覺改版：先以單頁測試確認新視覺方向，再延伸至全站，建立以頁面類型為單位的設計系統與模板，並以漸進式 CSS 架構完成新舊樣式過渡。</p>
+                <p>主站上線後，我將首頁、產品頁、價格頁模板套用至繁中、簡中網站，於主站上線後 3 周內完成多語系上線。</p>
+              </div>
+            </div>
+
+            <section aria-labelledby="info" class="flex flex-col gap-4 rounded-card bg-muted p-6 md:p-8">
+              <h2 id="info" class="text-xl leading-[1.2] font-bold">專案資訊</h2>
+              <!-- grid-cols-[auto_1fr]：左欄依標籤寬度、右欄填滿；內容換行時自動與第一行對齊（懸掛縮排） -->
+              <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2">
+                <dt class="font-bold">期間</dt>
+                <dd>2026/01 – 2026/04（主站 4 月初上線，繁中／簡中網站 4 月中上線）</dd>
+                <dt class="font-bold">角色</dt>
+                <dd>獨立負責視覺改版的方向制定與規範產出，並主導前端 SCSS 架構規劃與切版實作</dd>
+                <dt class="font-bold">範疇</dt>
+                <dd>視覺設計（設計系統、重點頁面改版）｜前端開發（SCSS 架構、元件模組化、語意化 HTML、CWV／SEO）｜多語系延伸（繁中、簡中）｜上線後迭代</dd>
+                <dt class="font-bold">協作</dt>
+                <dd>成長行銷經理（Growth Marketing Manager）1 位，負責文案、內容架構、廣告投放與數據</dd>
+                <dt class="font-bold">工具</dt>
+                <dd>Figma、SCSS、Microsoft Clarity、Lighthouse</dd>
+              </dl>
+            </section>
+          </div>
+
+          <!-- 首屏圖片：不延遲載入，fetchpriority="high" 讓瀏覽器優先下載（影響 LCP） -->
+          <img src="/assets/images/projects/website-revamp/hero-visual.webp" width="1216" height="960" alt="改版後的 BQool 首頁桌機版與手機版畫面" fetchpriority="high" decoding="async" class="h-auto w-full">
+        </div>
+      </header>
+
+      <!-- ========== 內文：01–07 各節之間以分隔線隔開 ========== -->
+      <div class="mx-auto flex max-w-7xl flex-col gap-12 px-4 pb-20 md:gap-16 md:pt-20">
+
+        <!-- ===== 01 背景 ===== -->
+        <section aria-labelledby="background" class="flex flex-col gap-8">
+          <h2 id="background" class="text-2xl leading-[1.2] font-bold">01 背景</h2>
+          <div class="flex flex-col gap-4">
+            <p>因應新產品上線，官網首頁需要置入大量新產品內容，同時保留既有產品的曝光與資訊完整性，內容架構需要大幅更動。恰逢既有網站歷經多年迭代，視覺風格老舊、缺乏一致的設計邏輯，因此趁這次改版機會，一併進行整體翻新。</p>
+            <p>改版前主要頁面盤點：</p>
+            <!-- 圖片 h-[400px] object-cover object-top：統一高度 400px，從頂部開始顯示，超出部分裁切。
+                 sm:grid-cols-[repeat(3,220px)]：自訂欄寬（arbitrary value），桌機固定 220px 三欄；手機三欄平分寬度 -->
+            <div class="grid grid-cols-3 items-start gap-3 sm:w-fit sm:grid-cols-[repeat(3,220px)] sm:gap-4">
+              <figure class="flex flex-col items-center gap-4">
+                <figcaption class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">首頁</figcaption>
+                <img src="/assets/images/projects/website-revamp/inventory-home.webp" width="220" height="608" alt="改版前首頁長截圖" loading="lazy" decoding="async" class="h-[400px] w-full rounded-card object-cover object-top">
+              </figure>
+              <figure class="flex flex-col items-center gap-4">
+                <figcaption class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">產品價格頁</figcaption>
+                <img src="/assets/images/projects/website-revamp/inventory-pricing.webp" width="220" height="488" alt="改版前產品價格頁長截圖" loading="lazy" decoding="async" class="h-[400px] w-full rounded-card object-cover object-top">
+              </figure>
+              <figure class="flex flex-col items-center gap-4">
+                <figcaption class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">產品頁</figcaption>
+                <img src="/assets/images/projects/website-revamp/inventory-product.webp" width="220" height="653" alt="改版前產品頁長截圖" loading="lazy" decoding="async" class="h-[400px] w-full rounded-card object-cover object-top">
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 02 問題 ===== -->
+        <section aria-labelledby="problem" class="flex flex-col gap-4">
+          <h2 id="problem" class="text-2xl leading-[1.2] font-bold">02 問題</h2>
+          <p>盤點改版前的頁面後，歸納出三個主要問題：</p>
+          <!-- justify-between：讓三欄的圖片底部對齊（文字長短不同時） -->
+          <ol class="grid gap-10 md:grid-cols-3 md:gap-8">
+            <li class="flex flex-col justify-between gap-4">
+              <div class="flex flex-col gap-2">
+                <h3 class="font-bold">1. 資訊架構無法容納新產品</h3>
+                <p class="text-sm/[1.6]">既有架構是為單一產品線設計的。新舊產品需要同時在首頁曝光，直接疊加內容會讓資訊層級混亂，使用者難以判斷各產品的定位。</p>
+              </div>
+              <img src="/assets/images/projects/website-revamp/problem-ia.webp" width="394" height="296" alt="改版前首頁與產品頁並排，新舊產品內容各自堆疊" loading="lazy" decoding="async" class="h-auto w-full">
+            </li>
+            <li class="flex flex-col justify-between gap-4">
+              <div class="flex flex-col gap-2">
+                <h3 class="font-bold">2. 視覺缺乏一致規範</h3>
+                <p class="text-sm/[1.6]">網站多年迭代下來，同類型元件（按鈕、卡片、標題區塊）在不同頁面呈現不同樣式，導致品牌識別度分散。</p>
+              </div>
+              <img src="/assets/images/projects/website-revamp/problem-visual.webp" width="394" height="296" alt="改版前不同頁面的標題區塊與按鈕樣式各不相同" loading="lazy" decoding="async" class="h-auto w-full">
+            </li>
+            <li class="flex flex-col justify-between gap-4">
+              <div class="flex flex-col gap-2">
+                <h3 class="font-bold">3. 技術債拖累維護與網站體質</h3>
+                <p class="text-sm/[1.6]">樣式缺乏模組化，同一元件散落在多個檔案，改一處就得連動多處；內容大幅更動也可能影響既有的搜尋表現。</p>
+              </div>
+              <img src="/assets/images/projects/website-revamp/problem-tech-debt.webp" width="394" height="296" alt="改版前的樣式檔案列表，檔案數量眾多" loading="lazy" decoding="async" class="h-auto w-full">
+            </li>
+          </ol>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 03 目標 ===== -->
+        <section aria-labelledby="goals" class="flex flex-col gap-8">
+          <h2 id="goals" class="text-2xl leading-[1.2] font-bold">03 目標</h2>
+          <ol class="grid gap-4 md:grid-cols-3 md:gap-8">
+            <li class="flex gap-4 rounded-card bg-muted p-6">
+              <!-- 大數字只是裝飾（順序已由 <ol> 表達），aria-hidden 讓讀屏軟體略過 -->
+              <span aria-hidden="true" class="font-numeral text-7xl leading-none font-bold text-accent-soft italic">1</span>
+              <div class="flex flex-1 flex-col items-start gap-2">
+                <h3 class="text-xl font-bold">融入新產品資訊</h3>
+                <p>在不犧牲既有產品能見度的前提下，清楚呈現新產品定位</p>
+                <p class="inline-flex items-center gap-1 rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-foreground">
+                  對應決策
+                  <svg aria-hidden="true" class="size-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                  <a href="#d1" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D1</a>
+                </p>
+              </div>
+            </li>
+            <li class="flex gap-4 rounded-card bg-muted p-6">
+              <span aria-hidden="true" class="font-numeral text-7xl leading-none font-bold text-accent-soft italic">2</span>
+              <div class="flex flex-1 flex-col items-start gap-2">
+                <h3 class="text-xl font-bold">建立一致的視覺語言</h3>
+                <p>透過元件模組化與設計系統，降低後續開發與交接成本</p>
+                <p class="inline-flex items-center gap-1 rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-foreground">
+                  對應決策
+                  <svg aria-hidden="true" class="size-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                  <a href="#d2" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D2</a>,
+                  <a href="#d3" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D3</a>
+                </p>
+              </div>
+            </li>
+            <li class="flex gap-4 rounded-card bg-muted p-6">
+              <span aria-hidden="true" class="font-numeral text-7xl leading-none font-bold text-accent-soft italic">3</span>
+              <div class="flex flex-1 flex-col items-start gap-2">
+                <h3 class="text-xl font-bold">兼顧維護性與 SEO</h3>
+                <p>以模組化架構降低開發與交接成本，內容增加的同時維持速度、強化技術 SEO。</p>
+                <p class="inline-flex items-center gap-1 rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-foreground">
+                  對應決策
+                  <svg aria-hidden="true" class="size-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                  <a href="#d3" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D3</a>,
+                  <a href="#d4" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D4</a>
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 04 設計過程與決策 ===== -->
+        <section aria-labelledby="decisions" class="flex flex-col gap-8">
+          <h2 id="decisions" class="text-2xl leading-[1.2] font-bold">04 設計過程與決策</h2>
+
+          <div class="flex flex-col gap-16">
+            <!-- D1 -->
+            <!-- scroll-mt-24：錨點跳轉時預留 sticky header 的高度，標題不會被蓋住 -->
+            <section id="d1" aria-labelledby="d1-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="d1-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">D1｜先以單頁驗證新視覺，再延伸至全站</h3>
+              <p><strong>背景：</strong>全站翻新的成本高；若新視覺方向不對，修正成本會擴及所有頁面。</p>
+              <div>
+                <p><strong>執行：</strong>先在單一產品頁測試新視覺。由成長行銷經理在同一時段，對原版與新版頁面分別投放廣告並提供數據，排除時段造成的差異，測試為期 10 天。</p>
+                <p>轉換定義為「點擊 Free Trial 按鈕」，同時觀察互動率、每次工作階段事件數與互動時間，確認使用者不只是點擊，也確實讀了內容。結果新版轉換率約為原版的 1.7 倍；互動率約為 1.6 倍、平均互動時間約 2 倍，每次工作階段事件數增加約 11%。</p>
+              </div>
+              <p>不過測試期只有 10 天、流量全部來自廣告，這些數字只能說明新版表現較好，無法說明原因。因此我再用 Clarity 交叉檢查行為是否符合設計意圖：點擊排行中，Hero 的 CTA 居第一，導覽列 CTA 也進入前五，代表新版的視覺層級確實把注意力引導到轉換按鈕。確認方向正確後，才把這套視覺語言延伸到全站。</p>
+              <p>另一個發現是位在頁尾的 Top Seller 使用見證輪播：雖然越往下看到的人越少，它的切換按鈕卻是點擊數第二名，捲到這裡的訪客也停留較久。我們因此判斷這是訪客感興趣的內容，後續將它安插到其他相關頁面。</p>
+
+              <p><strong>取捨：</strong>多花了一段測試時間，讓視覺方向的討論有數據依據，而不是主觀偏好；後續全站改版時，不必再為風格反覆來回。</p>
+
+              <figure class="flex flex-col gap-2">
+                <figcaption class="text-sm font-bold text-muted-foreground">單頁 A/B 新舊版對照</figcaption>
+                <!-- 圖片固定 420×260 顯示框：aspect-[21/13] 即 420:260，手機寬度不足時等比縮小；object-cover 填滿框、object-top 從頂部開始保留，溢出部分裁切 -->
+                <div class="grid gap-6 md:w-fit md:grid-cols-[repeat(2,minmax(0,420px))]">
+                  <div class="flex flex-col items-start gap-2">
+                    <span class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">舊版</span>
+                    <img src="/assets/images/projects/website-revamp/ab-old.webp" width="560" height="477" alt="舊版產品頁：藍色漸層主視覺、筆電示意圖與四種 AI 策略圖示" loading="lazy" decoding="async" class="aspect-[21/13] w-full max-w-[420px] object-cover object-top">
+                  </div>
+                  <div class="flex flex-col items-start gap-2">
+                    <span class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">新版</span>
+                    <img src="/assets/images/projects/website-revamp/ab-new.webp" width="560" height="474" alt="新版產品頁：白底主視覺搭配數據儀表板，下方為深色的三大賣點區塊" loading="lazy" decoding="async" class="aspect-[21/13] w-full max-w-[420px] object-cover object-top">
+                  </div>
+                </div>
+              </figure>
+
+            </section>
+
+            <!-- D2 -->
+            <section id="d2" aria-labelledby="d2-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="d2-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">D2｜首頁如何同時主推新產品，又不讓既有產品消失</h3>
+              <p><strong>背景：</strong>網頁文案與內容架構由成長行銷經理提供，我負責決定怎麼呈現。其他頁面的設計重點，是讓同一套版型適用於不同產品；首頁的難點則在於，既要主推新產品，又要讓另外兩項產品被看見。因此首頁要先確保訪客能在最短時間內知道 BQool 有哪些產品。</p>
+              <p class="font-bold">三個方向：</p>
+
+              <!-- 手機寬度放不下四欄表格，外層可左右捲動；tabindex 讓鍵盤使用者也能捲動 -->
+              <div role="region" aria-labelledby="d2-table-caption" tabindex="0" class="overflow-x-auto focus-visible:outline-2 focus-visible:outline-muted-foreground">
+                <!-- [&_th]:p-3：arbitrary variant，一次設定表格內所有 th 的樣式，不必每格重複寫 -->
+                <table class="w-full min-w-[56rem] border-collapse text-left align-top [&_td]:p-3 [&_td]:align-top [&_th]:p-3 [&_th]:align-top [&_tr]:border-b [&_tr]:border-line">
+                  <caption id="d2-table-caption" class="sr-only">首頁 Hero 三個設計方向比較</caption>
+                  <thead class="font-medium">
+                    <tr>
+                      <td class="w-[60px]"></td>
+                      <th scope="col" class="font-medium">A 版：精簡優先</th>
+                      <th scope="col" class="font-medium">B 版：陣容＋畫面</th>
+                      <th scope="col" class="font-medium">Final（採用）</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="font-normal">做法</th>
+                      <td>
+                        <p>Hero 右側直接列出三項產品，詳細說明交給下一個區塊</p>
+                        <img src="/assets/images/projects/website-revamp/hero-option-a.webp" width="360" height="338" alt="A 版線框：Hero 左側標題，右側三張產品卡片" loading="lazy" decoding="async" class="mt-4 h-auto w-full max-w-[360px]">
+                      </td>
+                      <td>
+                        <p>產品卡片下方加入 dashboard 拼貼，同時呈現陣容與實際介面</p>
+                        <img src="/assets/images/projects/website-revamp/hero-option-b.webp" width="360" height="338" alt="B 版線框：置中標題下方三張橫排卡片，再接 dashboard 拼貼" loading="lazy" decoding="async" class="mt-4 h-auto w-full max-w-[360px]">
+                      </td>
+                      <td>
+                        <p>產品清單改為直排，放在 dashboard 旁</p>
+                        <img src="/assets/images/projects/website-revamp/hero-final.webp" width="360" height="343" alt="Final 線框：產品清單直排於左，右側為 dashboard 拼貼" loading="lazy" decoding="async" class="mt-4 h-auto w-full max-w-[360px]">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-normal">優點</th>
+                      <td>訪客能立即掌握產品陣容</td>
+                      <td>陣容與實際介面一次看到</td>
+                      <td>首屏同時呈現陣容與畫面，高度維持精簡</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-normal">缺點</th>
+                      <td>首屏看不到任何產品畫面</td>
+                      <td>三張卡片橫排佔掉一整列，加上視覺後 Hero 明顯過高</td>
+                      <td>—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p><strong>選擇與理由：</strong>Final 結合 A、B 兩版的優點：以水平空間取代垂直空間，把清單直排在 dashboard 旁，解決 B 版高度過高的問題，同時保留 A 版沒有的產品畫面。</p>
+              <ul class="list-disc ps-6">
+                <li><strong>桌機版：</strong>點擊左側產品，右側切換為對應的產品畫面，訪客不必離開首頁就能預覽三項產品。</li>
+                <li><strong>行動版：</strong>產品畫面縮小後已看不清細節，因此拿掉拼貼圖，把清單改成帶箭頭的連結卡，直接引導進入各產品頁。</li>
+              </ul>
+              <p class="text-sm text-ink-subtle">＊桌機版與行動版的最終畫面，見「<a href="#result-1" class="underline underline-offset-2 hover:text-ink">05 專案成果｜目標 1</a>」。</p>
+            </section>
+
+            <!-- D3 -->
+            <section id="d3" aria-labelledby="d3-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="d3-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">D3｜設計系統以「頁面類型」為單位規劃</h3>
+              <p><strong>背景：</strong>新產品與新功能會持續上線，設計系統不能只服務這次改版的頁面。</p>
+              <div>
+                <p class="font-bold">執行：</p>
+                <ul class="list-disc ps-6">
+                  <li><strong>基礎規則：</strong>色彩以品牌原有色彩為基礎調整，延續 BQool 品牌印象，並明確定義每個顏色代表的意義；字體以簡潔易讀為原則，同時兼顧載入速度；另外規劃間距、圖標、陰影等可複用規則。</li>
+                  <li><strong>元件分層：</strong>依 Atoms／Molecules／Organisms 整理元件庫。</li>
+                  <li><strong>頁面模板：</strong>同性質頁面（產品頁、功能頁、價格頁）共用版型，新增頁面時以既有元件組裝。</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- D4 -->
+            <section id="d4" aria-labelledby="d4-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="d4-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">D4｜漸進式改版：新舊樣式在過渡期如何共存</h3>
+              <p><strong>背景：</strong>三個月內無法全站一次翻新，只能以重點頁面優先改版。但所有頁面共用 header、footer，新舊頁面會並存一段時間。</p>
+
+              <div role="region" aria-labelledby="d4-table-caption" tabindex="0" class="max-w-[940px] overflow-x-auto focus-visible:outline-2 focus-visible:outline-muted-foreground">
+                <table class="w-full min-w-[36rem] border-collapse border border-line text-left [&_td]:p-3 [&_td]:align-top [&_th]:p-3 [&_th]:align-top [&_tr]:border-b [&_tr]:border-line">
+                  <caption id="d4-table-caption" class="sr-only">新舊樣式共存的三個選項比較</caption>
+                  <thead class="bg-muted">
+                    <tr>
+                      <th scope="col" class="w-[204px] font-medium">選項</th>
+                      <th scope="col" class="font-medium">做法</th>
+                      <th scope="col" class="font-medium">問題</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="font-bold">A 全站一次替換</th>
+                      <td>新樣式直接套用到所有頁面</td>
+                      <td>未改版頁面會大量跑版，時程不允許逐頁修正</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-bold">B 在同一份 CSS 逐步覆寫</th>
+                      <td>新樣式寫在舊檔案裡，以覆寫處理差異</td>
+                      <td>新舊規則互相牽動，改版越久越難拆乾淨</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-bold">C 檔案層級隔離（採用）</th>
+                      <td>新舊樣式分屬不同檔案，依頁面載入</td>
+                      <td>過渡期需維護兩套樣式</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <p class="font-bold">選擇：檔案層級隔離，並讓舊樣式有明確的淘汰邊界。</p>
+                <ul class="list-disc ps-6">
+                  <li><strong>main.css：</strong>全站共用的設計 token、基礎樣式與 header／footer。共用區塊統一使用新版，新舊頁面的導覽體驗一致。</li>
+                  <li><strong>頁面類別 CSS：</strong>依頁面類型拆分，每頁只載入需要的樣式，避免載入無用的 CSS。</li>
+                  <li><strong>legacy.css：</strong>把舊樣式集中成一個檔案，只有尚未改版的頁面載入；該頁改版後即移除引用。</li>
+                </ul>
+              </div>
+              <p><strong>取捨：</strong>過渡期要維護兩套樣式，但 legacy.css 讓「哪些舊程式碼還在用」一目了然。過渡期的跑版在引入 legacy.css 後即可解決，不影響上線節奏。</p>
+              <p><strong>上線後的演進：</strong>改版頁面越來越多後，main.css 持續變肥，每一頁都得載入其他頁面的樣式。上線後我把各頁面類別的樣式從 main.css 拆出（例如 home.css），main.css 只保留全站共用的部分，每頁只載入需要的樣式（成效見「<a href="#iteration" class="underline underline-offset-2 hover:text-muted-foreground">06 上線後迭代</a>」）。</p>
+              <p><strong>技術細節：</strong>SCSS 資料夾參考 7-1 pattern 的分層（abstracts／base／components）。上線時編譯為單一 main.css，上線後再改為頁面層級的 CSS 拆分（page-level CSS splitting），輸出 main.css 與各頁面類別的 CSS。新舊樣式的過渡方式對應工程上的 Strangler Fig pattern：舊樣式隔離在 legacy.css，每改版一頁就移除一個引用，直到舊系統被完全取代。色彩、字級、間距等 design tokens 抽成共用變數層，每個元件對應獨立的 partial，讓設計規範與程式碼結構一致。</p>
+
+              <figure class="flex max-w-[640px] flex-col gap-2">
+                <!-- 程式碼框固定最高 290px（同設計稿），內容可捲動 -->
+                <div role="region" aria-labelledby="scss-tree-caption" tabindex="0" class="max-h-[290px] overflow-auto rounded-card border border-neutral-300 bg-neutral-100 px-6 py-4 focus-visible:outline-2 focus-visible:outline-muted-foreground">
+                  <pre class="font-mono text-xs leading-normal text-black"><code>scss/
+│
+├── abstracts/                     # 抽象層（不輸出實際 CSS，純工具與設定）
+│   ├── _mixins.scss               # 共通 Mixin（如 RWD 斷點、Flex 縮寫等）
+│   └── _variables.scss            # 全域變數（顏色、字級、間距等）
+│
+├── base/                          # 全域基礎樣式
+│   ├── _grid.scss                 # 網格排版系統與容器設定
+│   ├── _reset.scss                # CSS 重置 / 標準化
+│   └── _typography.scss           # 全域排版與字體樣式
+│
+├── components/                    # 獨立、可複用組件（UI 元件層）
+│   ├── _buttons.scss              # 按鈕
+│   ├── _carousel-social-proof.scss  # 輪播：社群見證
+│   ├── _carousel-stats.scss       # 輪播：用戶成效數據
+│   ├── _carousel-testimonial.scss # 輪播：客戶見證
+│   ├── _comparison-brand.scss     # 品牌比較表
+│   ├── _dropdown.scss             # 下拉式選單
+│   ├── _form.scss                 # 表單元件
+│   ├── _marquee-social-sellers.scss # 跑馬燈：社群賣家分享
+│   ├── _modal.scss                # 彈窗共用樣式
+│   ├── _modal-survey-ai-rules.scss  # 特定問卷/AI規範彈窗元件
+│   ├── _pricing.scss              # 價格方案卡片元件
+│   ├── _tab-panel-card.scss       # 分頁卡片卡片視圖
+│   ├── _tab-panel.scss            # 分頁面板容器
+│   └── _tabs.scss                 # 分頁切換按鈕/標籤
+│
+├── layout/                        # 骨架與全域佈局
+│   ├── _header.scss               # 全域導覽列 / 頁首
+│   └── _footer.scss               # 全域頁尾
+│
+├── sections/                      # 頁面常見區塊（介於 Component 與 Page 之間）
+│   ├── _hero.scss                 # 主視覺首屏區塊 (Hero Section)
+│   ├── _common.scss               # 通用區塊樣式
+│   ├── _faq.scss                  # 常見問題區塊 (FAQ Section)
+│   └── _bottom-cta.scss           # 底部行動召喚區塊 (Bottom CTA Section)
+│
+├── pages/                         # 特定單頁獨立樣式（Partial）
+│   ├── _case-studies.scss         # 案例分析頁樣式
+│   ├── _comparison.scss           # 比較頁樣式
+│   ├── _feature.scss              # 功能特色頁樣式
+│   ├── _home.scss                 # 首頁專用樣式
+│   ├── _landing.scss              # 登陸頁樣式
+│   ├── _price.scss                # 價格定價頁樣式
+│   ├── _product-advertising.scss  # 產品廣告頁樣式
+│   └── _product.scss              # 產品展示頁樣式
+│
+└── 入口與打包檔案 (Root Files / Entrypoints)
+    ├── main.scss                  # 全域主要入口（載入基礎、佈局與共用元件）
+    ├── home.scss                  # 首頁打包入口（可編譯為 home.css）
+    ├── landing.scss               # 著陸頁打包入口（可編譯為 landing.css）
+    ├── feature.scss               # 功能頁打包入口
+    ├── price.scss                 # 價格頁打包入口
+    ├── product.scss               # 產品頁打包入口
+    ├── product-advertising.scss   # 廣告產品頁打包入口
+    ├── case-studies.scss          # 案例頁打包入口
+    ├── comparison.scss            # 比較頁打包入口
+    └── modal-survey-ai-rules.scss # 獨立載入的模態窗入口</code></pre>
+                </div>
+                <figcaption id="scss-tree-caption" class="text-sm text-ink-subtle">SCSS 資料夾結構</figcaption>
+              </figure>
+            </section>
+          </div>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 05 專案成果 ===== -->
+        <section aria-labelledby="results" class="flex flex-col gap-8">
+          <h2 id="results" class="text-2xl leading-[1.2] font-bold">05 專案成果</h2>
+
+          <!-- 目標 1 -->
+          <section aria-labelledby="result-1" class="flex flex-col gap-8">
+            <h3 id="result-1" class="scroll-mt-24 text-xl leading-[1.2] font-bold">目標 1｜重點頁面</h3>
+
+            <!-- 裝置預覽框：外框固定稿件比例（aspect-video＝1920×1080；aspect-[390/693]＝手機），內層 overflow-y-auto 讓整頁長圖可在框內上下捲動。
+                 tabindex="0" + role="region"：鍵盤使用者 Tab 到框內後可用方向鍵捲動。
+                 [&:fullscreen]:…：自己進入全螢幕時的樣式；[:fullscreen_&]:…：外層進入全螢幕時，內層元素的樣式（arbitrary variant）。
+                 全螢幕時桌機圖最寬 1920px、手機圖最寬 430px 並置中，維持裝置比例；兩個 svg 依狀態切換「放大／縮小」圖示。
+                 全螢幕按鈕預設 hidden，由 /assets/js/embed-fullscreen.js 確認瀏覽器支援後才顯示（iPhone Safari 不支援）。
+                 每組為一個灰底卡片（bg-muted）：標題列＝頁面名稱（h4）＋右側「看上線頁面」連結；下方桌機＋手機預覽並排，說明文字只標裝置。
+                 灰底上的連結用 text-muted-strong（#62748e 在灰底上對比不足 4.5:1）。md:grid-cols-[880fr_280fr]：兩欄依 880:280 比例分配寬度 -->
+            <section aria-labelledby="page-home" class="flex flex-col gap-4 rounded-card bg-muted p-4 md:p-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <h4 id="page-home" class="text-lg font-bold">首頁</h4>
+                <a href="https://www.bqool.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看上線頁面<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：BQool 首頁（另開新視窗）</span></a>
+              </div>
+              <div class="grid w-full max-w-[1184px] items-start gap-6 md:grid-cols-[880fr_280fr]">
+                <figure class="flex flex-col gap-2">
+                  <div id="preview-home-desktop" class="relative overflow-hidden rounded-card border border-line bg-white [&:fullscreen]:rounded-none [&:fullscreen]:border-0 [&:fullscreen]:bg-neutral-100">
+                    <div tabindex="0" role="region" aria-label="首頁 Desktop 整頁預覽（可上下捲動）" class="aspect-video overflow-y-auto [scrollbar-width:thin] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-muted-foreground [:fullscreen_&]:aspect-auto [:fullscreen_&]:h-full">
+                      <img src="/assets/images/projects/website-revamp/homepage.webp" width="1920" height="6203" alt="改版後首頁桌機版整頁設計" loading="lazy" decoding="async" class="block h-auto w-full [:fullscreen_&]:mx-auto [:fullscreen_&]:max-w-[1920px]">
+                    </div>
+                    <button type="button" hidden data-fullscreen-target="preview-home-desktop" data-label="全螢幕檢視：首頁 Desktop" aria-label="全螢幕檢視：首頁 Desktop" class="absolute top-2 right-2 inline-flex size-9 cursor-pointer items-center justify-center rounded-md bg-white/90 text-neutral-700 shadow-sm ring-1 ring-black/10 backdrop-blur transition-colors hover:bg-white hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">
+                      <svg aria-hidden="true" class="size-5 [:fullscreen_&]:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <svg aria-hidden="true" class="hidden size-5 [:fullscreen_&]:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
+                    </button>
+                  </div>
+                  <figcaption class="text-sm text-ink-subtle">Desktop</figcaption>
+                </figure>
+                <figure class="w-full max-w-[280px] flex flex-col gap-2">
+                  <div id="preview-home-mobile" class="relative overflow-hidden rounded-card border border-line bg-white [&:fullscreen]:rounded-none [&:fullscreen]:border-0 [&:fullscreen]:bg-neutral-100">
+                    <div tabindex="0" role="region" aria-label="首頁 Mobile 整頁預覽（可上下捲動）" class="aspect-[390/693] overflow-y-auto [scrollbar-width:thin] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-muted-foreground [:fullscreen_&]:aspect-auto [:fullscreen_&]:h-full">
+                      <!-- 長圖超過 WebP 高度上限（16383px），切成兩段上下接續；第二段 alt="" 避免讀屏重複朗讀 -->
+                      <img src="/assets/images/projects/website-revamp/homepage-m-1.webp" width="780" height="9165" alt="改版後首頁手機版整頁設計" loading="lazy" decoding="async" class="block h-auto w-full [:fullscreen_&]:mx-auto [:fullscreen_&]:max-w-[430px]">
+                      <img src="/assets/images/projects/website-revamp/homepage-m-2.webp" width="780" height="9164" alt="" loading="lazy" decoding="async" class="block h-auto w-full [:fullscreen_&]:mx-auto [:fullscreen_&]:max-w-[430px]">
+                    </div>
+                    <button type="button" hidden data-fullscreen-target="preview-home-mobile" data-label="全螢幕檢視：首頁 Mobile" aria-label="全螢幕檢視：首頁 Mobile" class="absolute top-2 right-2 inline-flex size-9 cursor-pointer items-center justify-center rounded-md bg-white/90 text-neutral-700 shadow-sm ring-1 ring-black/10 backdrop-blur transition-colors hover:bg-white hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">
+                      <svg aria-hidden="true" class="size-5 [:fullscreen_&]:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <svg aria-hidden="true" class="hidden size-5 [:fullscreen_&]:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
+                    </button>
+                  </div>
+                  <figcaption class="text-sm text-ink-subtle">Mobile</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section aria-labelledby="page-product" class="flex flex-col gap-4 rounded-card bg-muted p-4 md:p-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <h4 id="page-product" class="text-lg font-bold">產品頁</h4>
+                <a href="https://www.bqool.com/advertising/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看上線頁面<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：BQool 產品頁（另開新視窗）</span></a>
+              </div>
+              <div class="grid w-full max-w-[1184px] items-start gap-6 md:grid-cols-[880fr_280fr]">
+                <figure class="flex flex-col gap-2">
+                  <div id="preview-product-desktop" class="relative overflow-hidden rounded-card border border-line bg-white [&:fullscreen]:rounded-none [&:fullscreen]:border-0 [&:fullscreen]:bg-neutral-100">
+                    <div tabindex="0" role="region" aria-label="產品頁 Desktop 整頁預覽（可上下捲動）" class="aspect-video overflow-y-auto [scrollbar-width:thin] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-muted-foreground [:fullscreen_&]:aspect-auto [:fullscreen_&]:h-full">
+                      <img src="/assets/images/projects/website-revamp/product-page.webp" width="1920" height="7851" alt="改版後產品頁桌機版整頁設計" loading="lazy" decoding="async" class="block h-auto w-full [:fullscreen_&]:mx-auto [:fullscreen_&]:max-w-[1920px]">
+                    </div>
+                    <button type="button" hidden data-fullscreen-target="preview-product-desktop" data-label="全螢幕檢視：產品頁 Desktop" aria-label="全螢幕檢視：產品頁 Desktop" class="absolute top-2 right-2 inline-flex size-9 cursor-pointer items-center justify-center rounded-md bg-white/90 text-neutral-700 shadow-sm ring-1 ring-black/10 backdrop-blur transition-colors hover:bg-white hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">
+                      <svg aria-hidden="true" class="size-5 [:fullscreen_&]:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <svg aria-hidden="true" class="hidden size-5 [:fullscreen_&]:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
+                    </button>
+                  </div>
+                  <figcaption class="text-sm text-ink-subtle">Desktop</figcaption>
+                </figure>
+                <figure class="w-full max-w-[280px] flex flex-col gap-2">
+                  <div id="preview-product-mobile" class="relative overflow-hidden rounded-card border border-line bg-white [&:fullscreen]:rounded-none [&:fullscreen]:border-0 [&:fullscreen]:bg-neutral-100">
+                    <div tabindex="0" role="region" aria-label="產品頁 Mobile 整頁預覽（可上下捲動）" class="aspect-[390/693] overflow-y-auto [scrollbar-width:thin] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-muted-foreground [:fullscreen_&]:aspect-auto [:fullscreen_&]:h-full">
+                      <!-- 長圖超過 WebP 高度上限（16383px），切成兩段上下接續；第二段 alt="" 避免讀屏重複朗讀 -->
+                      <img src="/assets/images/projects/website-revamp/product-page-m-1.webp" width="780" height="10644" alt="改版後產品頁手機版整頁設計" loading="lazy" decoding="async" class="block h-auto w-full [:fullscreen_&]:mx-auto [:fullscreen_&]:max-w-[430px]">
+                      <img src="/assets/images/projects/website-revamp/product-page-m-2.webp" width="780" height="10643" alt="" loading="lazy" decoding="async" class="block h-auto w-full [:fullscreen_&]:mx-auto [:fullscreen_&]:max-w-[430px]">
+                    </div>
+                    <button type="button" hidden data-fullscreen-target="preview-product-mobile" data-label="全螢幕檢視：產品頁 Mobile" aria-label="全螢幕檢視：產品頁 Mobile" class="absolute top-2 right-2 inline-flex size-9 cursor-pointer items-center justify-center rounded-md bg-white/90 text-neutral-700 shadow-sm ring-1 ring-black/10 backdrop-blur transition-colors hover:bg-white hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">
+                      <svg aria-hidden="true" class="size-5 [:fullscreen_&]:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <svg aria-hidden="true" class="hidden size-5 [:fullscreen_&]:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
+                    </button>
+                  </div>
+                  <figcaption class="text-sm text-ink-subtle">Mobile</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section aria-labelledby="page-pricing" class="flex flex-col gap-4 rounded-card bg-muted p-4 md:p-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <h4 id="page-pricing" class="text-lg font-bold">價格頁</h4>
+                <a href="https://www.bqool.com/price/advertising/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看上線頁面<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：BQool 價格頁（另開新視窗）</span></a>
+              </div>
+              <div class="grid w-full max-w-[1184px] items-start gap-6 md:grid-cols-[880fr_280fr]">
+                <figure class="flex flex-col gap-2">
+                  <div id="preview-pricing-desktop" class="relative overflow-hidden rounded-card border border-line bg-white [&:fullscreen]:rounded-none [&:fullscreen]:border-0 [&:fullscreen]:bg-neutral-100">
+                    <div tabindex="0" role="region" aria-label="價格頁 Desktop 整頁預覽（可上下捲動）" class="aspect-video overflow-y-auto [scrollbar-width:thin] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-muted-foreground [:fullscreen_&]:aspect-auto [:fullscreen_&]:h-full">
+                      <img src="/assets/images/projects/website-revamp/pricing-page.webp" width="1920" height="4230" alt="改版後價格頁桌機版整頁設計" loading="lazy" decoding="async" class="block h-auto w-full [:fullscreen_&]:mx-auto [:fullscreen_&]:max-w-[1920px]">
+                    </div>
+                    <button type="button" hidden data-fullscreen-target="preview-pricing-desktop" data-label="全螢幕檢視：價格頁 Desktop" aria-label="全螢幕檢視：價格頁 Desktop" class="absolute top-2 right-2 inline-flex size-9 cursor-pointer items-center justify-center rounded-md bg-white/90 text-neutral-700 shadow-sm ring-1 ring-black/10 backdrop-blur transition-colors hover:bg-white hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">
+                      <svg aria-hidden="true" class="size-5 [:fullscreen_&]:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <svg aria-hidden="true" class="hidden size-5 [:fullscreen_&]:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
+                    </button>
+                  </div>
+                  <figcaption class="text-sm text-ink-subtle">Desktop</figcaption>
+                </figure>
+                <figure class="w-full max-w-[280px] flex flex-col gap-2">
+                  <div id="preview-pricing-mobile" class="relative overflow-hidden rounded-card border border-line bg-white [&:fullscreen]:rounded-none [&:fullscreen]:border-0 [&:fullscreen]:bg-neutral-100">
+                    <div tabindex="0" role="region" aria-label="價格頁 Mobile 整頁預覽（可上下捲動）" class="aspect-[390/693] overflow-y-auto [scrollbar-width:thin] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-muted-foreground [:fullscreen_&]:aspect-auto [:fullscreen_&]:h-full">
+                      <img src="/assets/images/projects/website-revamp/pricing-page-m.webp" width="780" height="8935" alt="改版後價格頁手機版整頁設計" loading="lazy" decoding="async" class="block h-auto w-full [:fullscreen_&]:mx-auto [:fullscreen_&]:max-w-[430px]">
+                    </div>
+                    <button type="button" hidden data-fullscreen-target="preview-pricing-mobile" data-label="全螢幕檢視：價格頁 Mobile" aria-label="全螢幕檢視：價格頁 Mobile" class="absolute top-2 right-2 inline-flex size-9 cursor-pointer items-center justify-center rounded-md bg-white/90 text-neutral-700 shadow-sm ring-1 ring-black/10 backdrop-blur transition-colors hover:bg-white hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">
+                      <svg aria-hidden="true" class="size-5 [:fullscreen_&]:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <svg aria-hidden="true" class="hidden size-5 [:fullscreen_&]:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
+                    </button>
+                  </div>
+                  <figcaption class="text-sm text-ink-subtle">Mobile</figcaption>
+                </figure>
+              </div>
+            </section>
+          </section>
+
+          <!-- 目標 2 -->
+          <section aria-labelledby="result-2" class="flex flex-col gap-4">
+            <h3 id="result-2" class="text-xl leading-[1.2] font-bold">目標 2｜系統化成果</h3>
+            <!-- 設計規範 -->
+            <div class="flex flex-col gap-4">
+              <h4 class="text-lg font-bold">設計規範</h4>
+              <!-- max-w-[880px]：圖片原始寬度，避免在大螢幕被放大而變模糊 -->
+              <img src="/assets/images/projects/website-revamp/design-guidelines.webp" width="880" height="448" alt="設計規範：色彩、字級與間距規則" loading="lazy" decoding="async" class="h-auto w-full max-w-[880px]">
+            </div>
+            <!-- 元件庫 -->
+            <div class="flex flex-col gap-4">
+              <h4 class="text-lg font-bold">元件庫</h4>
+              <!-- max-w-[880px]：圖片原始寬度，避免在大螢幕被放大而變模糊 -->
+              <img src="/assets/images/projects/website-revamp/component-library.webp" width="880" height="869" alt="元件庫：依 Atoms、Molecules、Organisms 分層整理的元件" loading="lazy" decoding="async" class="h-auto w-full max-w-[880px]">
+            </div>
+
+            <!-- 多語系應用 -->
+            <div class="flex flex-col gap-4">
+              <h4 class="text-lg font-bold">多語系應用</h4>
+              <p>版型與元件沿用不變，另外建立中文字體規範，以對應中英文在字型與排版上的差異。</p>
+              <!-- md:grid-cols-2：平板以上兩張並排，手機上下堆疊 -->
+              <div class="grid gap-6 md:grid-cols-2">
+                <figure class="flex flex-col items-start gap-2">
+                  <img src="/assets/images/projects/website-revamp/homepage-tw.webp" width="1920" height="995" alt="繁體中文版首頁：沿用英文版版型，標題與內文改用中文字體規範" loading="lazy" decoding="async" class="h-auto w-full">
+                  <figcaption><a href="https://www.bqool.com.tw/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">繁體中文版官網<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">（另開新視窗）</span></a></figcaption>
+                </figure>
+                <figure class="flex flex-col items-start gap-2">
+                  <img src="/assets/images/projects/website-revamp/homepage-cn.webp" width="1920" height="995" alt="簡體中文版首頁：與繁體版相同版型，文字改為簡體中文" loading="lazy" decoding="async" class="h-auto w-full">
+                  <figcaption><a href="https://www.bqool.cn/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">簡體中文版官網<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">（另開新視窗）</span></a></figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <!-- 目標 3 -->
+          <section aria-labelledby="result-3" class="flex flex-col gap-4">
+            <h3 id="result-3" class="text-xl leading-[1.2] font-bold">目標 3｜效能與技術指標</h3>
+            <p>首頁主推產品由 1 個增為 2 個、內容全面改寫的情況下，LCP 維持 1.8 秒，CLS 降為 0；Lighthouse 效能與 SEO 分數各提升 7 分。</p>
+            <div class="flex flex-col gap-2">
+              <div role="region" aria-labelledby="metrics-caption" tabindex="0" class="max-w-[640px] overflow-x-auto focus-visible:outline-2 focus-visible:outline-muted-foreground">
+                <table class="w-full min-w-[30rem] border-collapse whitespace-nowrap text-left [&_td]:p-3 [&_th]:p-3 [&_tr]:border-b [&_tr]:border-line">
+                  <caption id="metrics-caption" class="sr-only">首頁改版前後效能與技術指標</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="font-medium md:w-[260px]">指標</th>
+                      <th scope="col" class="font-medium">改版前</th>
+                      <th scope="col" class="font-medium">改版後</th>
+                      <th scope="col" class="font-medium">差異</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="font-normal">LCP</th>
+                      <td>1.8秒</td>
+                      <td>1.8秒</td>
+                      <td>維持</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-normal">CLS</th>
+                      <td>0.01</td>
+                      <td>0</td>
+                      <td class="font-black text-positive">- 0.01</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-normal">Lighthouse Performance</th>
+                      <td>70</td>
+                      <td>77</td>
+                      <td class="font-black text-positive">+ 7</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-normal">Lighthouse SEO</th>
+                      <td>85</td>
+                      <td>92</td>
+                      <td class="font-black text-positive">+ 7</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-sm text-ink-subtle">*以首頁為例 / 桌機版 / 改版前後於相同條件下量測</p>
+            </div>
+            <div>
+              <p class="font-bold">做法：</p>
+              <!-- list-inside：項目符號放在文字內側，不額外縮排（同設計稿） -->
+              <ul class="list-inside list-disc">
+                <li>與成長行銷經理對齊內容層級，確保 H1–H6 標題結構正確</li>
+                <li>以語意化標籤建構頁面，讓搜尋引擎正確理解各區塊用途</li>
+                <li>圖片改用 WebP 格式，降低傳輸量</li>
+                <li>預先設定圖片與區塊尺寸，避免載入時版面位移（CLS）</li>
+                <li>依頁面拆分 CSS，只載入需要的樣式（詳見 <a href="#d4" class="underline underline-offset-2 hover:text-muted-foreground">D4</a>）</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 06 上線後迭代 ===== -->
+        <section id="iteration" aria-labelledby="iteration-title" class="flex scroll-mt-24 flex-col gap-8">
+          <h2 id="iteration-title" class="text-2xl leading-[1.2] font-bold">06 上線後迭代</h2>
+          <div class="flex flex-col gap-4">
+            <p>上線後三個月內，我持續從內容與技術兩個方向強化網站的搜尋基礎，以下項目都由我負責設計與開發。</p>
+
+            <h3 id="content-strategy" class="font-bold text-muted-foreground">內容策略：擴大觸及、深化互動</h3>
+            <div role="region" aria-labelledby="content-strategy" tabindex="0" class="max-w-[908px] overflow-x-auto focus-visible:outline-2 focus-visible:outline-muted-foreground">
+              <table class="w-full border-collapse border border-line text-left [&_td]:p-3 [&_th]:p-3 [&_tr]:border-b [&_tr]:border-line">
+                <thead class="bg-muted">
+                  <tr>
+                    <th scope="col" class="w-2/5 font-medium md:w-[260px]">項目</th>
+                    <th scope="col" class="font-medium">目的</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row" class="font-normal"><span class="flex flex-wrap items-baseline gap-x-3"><span>競品比較頁</span><a href="https://www.bqool.com/bqool-vs-helium10/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-foreground underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看範例頁<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：BQool vs Helium 10 比較頁（另開新視窗）</span></a></span></th><td>攔截使用者評估方案時的決策階段流量</td></tr>
+                  <tr><th scope="row" class="font-normal"><span class="flex flex-wrap items-baseline gap-x-3"><span>功能說明頁</span><a href="https://www.bqool.com/advertising/ai-bidding" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-foreground underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看範例頁<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：AI Bidding 功能頁（另開新視窗）</span></a></span></th><td>擴大關鍵字覆蓋，回應不同的搜尋意圖</td></tr>
+                  <tr><th scope="row" class="font-normal">內部連結＋麵包屑導覽</th><td>讓搜尋引擎理解網站的主題架構</td></tr>
+                  <tr><th scope="row" class="font-normal">免費賣家指南換取訂閱</th><td>把一次性造訪轉為可長期經營的名單</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 id="tech-strategy" class="font-bold text-muted-foreground">技術策略：提升效能與搜尋基礎</h3>
+            <div role="region" aria-labelledby="tech-strategy" tabindex="0" class="max-w-[908px] overflow-x-auto focus-visible:outline-2 focus-visible:outline-muted-foreground">
+              <table class="w-full border-collapse border border-line text-left [&_td]:p-3 [&_th]:p-3 [&_th]:align-top [&_tr]:border-b [&_tr]:border-line">
+                <thead class="bg-muted">
+                  <tr>
+                    <th scope="col" class="w-2/5 font-medium md:w-[260px]">項目</th>
+                    <th scope="col" class="font-medium">目的</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row" class="font-normal">浮動按鈕與置頂橫幅改版</th><td>客服外掛改為點擊後才載入；整合按鈕並支援拖曳，解決手機版遮擋內容</td></tr>
+                  <tr><th scope="row" class="font-normal">更新結構化資料</th><td>修正過時的 Schema，維持複合式搜尋結果的呈現資格</td></tr>
+                  <tr><th scope="row" class="font-normal">移除未使用的字型檔</th><td>移除完全未使用的 Google Fonts（Roboto）與 Font Awesome，減少約 127 KB 的 CSS</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <p><strong>成效：</strong>首頁載入的 CSS 檔案從約 234 KB 降至約 88 KB（−62%）。其中約 127 KB 來自移除兩支完全未使用的字型檔；另外將頁面類別樣式從 main.css 拆出後，首頁載入的 main.css＋home.css 也從約 97.6 KB 降至約 82.4 KB。</p>
+              <p class="text-[13px] text-ink-subtle">＊以 Chrome DevTools Coverage 量測，數值為未壓縮的檔案大小；比較對象為上線初期與迭代後的首頁。</p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 07 反思 ===== -->
+        <section aria-labelledby="reflection" class="flex flex-col gap-8">
+          <h2 id="reflection" class="text-2xl leading-[1.2] font-bold">07 反思</h2>
+          <div class="flex flex-col gap-4">
+            <div>
+              <h3 class="font-bold">從數據看見的趨勢</h3>
+              <p>首頁與關鍵頁面的內容大幅改寫後，搜尋引擎需要時間重新理解網站，所以規劃時就已把短期排名波動納入預期。</p>
+              <p>上線兩個月後，網站的搜尋能見度並未因改版流失。進一步觀察發現，搜尋曝光增加的同時，點擊率卻略為下降，這與搜尋結果頁 AI 摘要直接回答、使用者不再點擊的趨勢一致。另一方面，來自生成式 AI 的引薦流量在上線初期短暫下滑，次月即回升並成長一倍，由 AI 帶來的轉換也同步增加。</p>
+            </div>
+            <div>
+              <h3 class="font-bold">外部環境影響</h3>
+              <p>改版成效的判讀也受到外部環境影響。Amazon 平台政策調整，加上搜尋行為逐漸轉向生成式 AI，都會讓總流量出現與改版本身無關的起伏。</p>
+            </div>
+            <div>
+              <h3 class="font-bold">學到的事</h3>
+              <p>這次經驗讓我調整了評估改版成效的方式。當市場與搜尋行為同時在變動，單看流量增減，無法判斷改版本身的好壞。現在我會把指標分成兩類：</p>
+              <ul class="list-disc ps-6">
+                <li><strong class="text-muted-foreground">改版能直接影響的</strong>：Core Web Vitals、Lighthouse、搜尋曝光與排名、AI 引薦流量</li>
+                <li><strong class="text-muted-foreground">受外部環境主導的</strong>：總流量、品牌搜尋量</li>
+              </ul>
+              <p>並在改版前以長期趨勢建立比較基準，而不是只看上線前後的短期變化。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <!-- ========== Footer（三頁共用） ========== -->
+  <footer class="border-t border-neutral-200">
+    <div class="mx-auto max-w-7xl px-4 py-8 text-xs text-neutral-500">
+      <p data-zh="© 2026 方盈智 Carol Fang" data-en="© 2026 Carol Fang">© 2026 方盈智 Carol Fang</p>
+    </div>
+  </footer>
+</body>
+</html>

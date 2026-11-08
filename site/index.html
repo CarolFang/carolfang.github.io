@@ -1,50 +1,316 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" class="scroll-pt-20 motion-safe:scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Carol Fang｜資深網頁設計師 Senior Web Designer</title>
+  <title data-zh="Carol Fang｜資深網頁設計師 Senior Web Designer" data-en="Carol Fang | Senior Web Designer">Carol Fang｜資深網頁設計師 Senior Web Designer</title>
   <meta name="description" content="10 年網頁與產品設計經驗，橫跨 UI/UX、Design System、前端開發與設計團隊管理。">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/lang.js" defer></script>
 </head>
 <body class="bg-white text-neutral-900 antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">跳至主要內容</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:bg-white focus:px-4 focus:py-2" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a>
 
-  <header class="border-b border-neutral-200">
-    <nav aria-label="主選單" class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 md:px-8">
-      <a href="/" class="font-semibold">Carol Fang</a>
-      <ul class="flex gap-6">
-        <li><a href="/projects/">專案 Projects</a></li>
+  <!-- ========== Header（三頁共用，修改時請同步） ========== -->
+  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
+    <nav aria-label="主選單" class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-6 px-4 md:px-8">
+      <a href="/" class="text-sm tracking-widest text-neutral-600 uppercase">Carol Fang</a>
+      <ul class="hidden gap-8 text-sm text-neutral-600 md:flex">
+        <li><a href="/#work" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="作品" data-en="Work">作品</a></li>
+        <li><a href="/#about" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="/#experience" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="經歷" data-en="Experience">經歷</a></li>
+        <li><a href="/#contact" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="聯繫" data-en="Contact">聯繫</a></li>
       </ul>
+      <div role="group" aria-label="語言 Language" class="flex overflow-hidden rounded-full border border-neutral-900 text-xs">
+        <button type="button" data-lang-btn="zh" aria-pressed="true" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">中</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false" lang="en" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">EN</button>
+      </div>
     </nav>
   </header>
 
-  <main id="main" class="mx-auto max-w-5xl px-4 md:px-8">
-    <section aria-labelledby="intro-title" class="py-16 md:py-24">
-      <p class="text-sm text-neutral-600">Senior Web & Product Designer</p>
-      <h1 id="intro-title" class="mt-2 text-3xl font-bold md:text-5xl">設計與前端兼具的資深網頁設計師</h1>
-      <p class="mt-6 max-w-2xl text-lg text-neutral-700">10 年經驗，從品牌視覺、產品 UI/UX、Design System，到帶領設計團隊與官網前端開發。</p>
+  <main id="main">
+    <!-- ========== Hero ========== -->
+    <section aria-labelledby="intro-title" class="border-b border-neutral-200 py-20 md:py-28">
+      <div class="mx-auto max-w-5xl px-4 md:px-8">
+        <p class="mb-7 flex items-center gap-3 text-xs tracking-[0.18em] text-neutral-500 uppercase before:h-px before:w-7 before:bg-neutral-400 before:content-['']" data-zh="網頁設計師 · 台北" data-en="Web Designer · Taipei">網頁設計師 · 台北</p>
+        <h1 id="intro-title" class="mb-7 text-5xl leading-none font-bold tracking-tight md:text-7xl lg:text-8xl" data-zh="方盈智" data-en="Carol Fang">方盈智</h1>
+        <p class="mb-9 max-w-2xl text-lg text-neutral-600 md:text-xl"
+           data-zh="6 年 UI/UX 設計與網頁開發實務經驗，專注於官網改版、高轉換率行銷活動頁與 B/C 端數位產品設計。"
+           data-en="6 years of hands-on UI/UX design and web development experience, focused on site redesigns, high-converting campaign pages, and B2C digital products.">6 年 UI/UX 設計與網頁開發實務經驗，專注於官網改版、高轉換率行銷活動頁與 B/C 端數位產品設計。</p>
+        <ul class="mb-11 flex flex-wrap gap-2.5" aria-label="核心能力">
+          <li class="rounded-full border border-neutral-200 px-3.5 py-1.5 text-xs text-neutral-600" data-zh="使用者體驗" data-en="User Experience">使用者體驗</li>
+          <li class="rounded-full border border-neutral-200 px-3.5 py-1.5 text-xs text-neutral-600" data-zh="產品設計" data-en="Product Design">產品設計</li>
+          <li class="rounded-full border border-neutral-200 px-3.5 py-1.5 text-xs text-neutral-600" data-zh="品牌思維" data-en="Brand Thinking">品牌思維</li>
+          <li class="rounded-full border border-neutral-200 px-3.5 py-1.5 text-xs text-neutral-600" data-zh="溝通力" data-en="Communication">溝通力</li>
+        </ul>
+        <p class="max-w-2xl text-neutral-600"
+           data-zh="擅長整合設計思維與前端架構，因應團隊目標與資源限制進行彈性規劃，確保專案落地最佳化。目前於葳騰科技擔任網頁設計師，負責多語系官網規劃、設計、開發與維護。"
+           data-en="Skilled at bridging design thinking with front-end architecture, adapting plans flexibly to team goals and resource limits to ship the best possible outcome. Currently a web designer at Waiteng Technology, responsible for planning, designing, developing, and maintaining a multilingual company site.">擅長整合設計思維與前端架構，因應團隊目標與資源限制進行彈性規劃，確保專案落地最佳化。目前於葳騰科技擔任網頁設計師，負責多語系官網規劃、設計、開發與維護。</p>
+      </div>
     </section>
 
-    <section aria-labelledby="featured-title" class="py-16">
-      <h2 id="featured-title" class="text-2xl font-bold">推薦專案 Featured Projects</h2>
-      <ul class="mt-8 grid gap-6 md:grid-cols-2">
-        <li>
-          <article class="group h-full rounded-lg border border-neutral-200">
-            <a href="/projects/merchant-dashboard/" class="block h-full p-6">
-              <h3 class="text-lg font-semibold group-hover:underline">商家後台設計</h3>
-              <p class="mt-2 text-neutral-700">收費方案、數位行銷工具、內容上架管理的系統設計與長期迭代。</p>
-            </a>
+    <!-- ========== 01 專長 ========== -->
+    <section id="about" aria-labelledby="about-title" class="border-b border-neutral-200 py-20 md:py-24">
+      <div class="mx-auto max-w-5xl px-4 md:px-8">
+        <div class="mb-12">
+          <p class="text-sm text-neutral-500" data-zh="01 — 專長" data-en="01 — Skills">01 — 專長</p>
+          <h2 id="about-title" class="text-3xl font-bold tracking-tight" data-zh="能力範圍" data-en="What I do">能力範圍</h2>
+        </div>
+        <!-- gap-px + 灰底：讓卡片之間露出 1px 灰線，形成格線效果 -->
+        <div class="grid gap-px border border-neutral-200 bg-neutral-200 md:grid-cols-2">
+          <article class="bg-white p-6 md:p-8">
+            <h3 class="mb-1.5 text-lg font-semibold" data-zh="網頁開發" data-en="Web Development">網頁開發</h3>
+            <p class="mb-4 text-sm text-neutral-500">HTML5 · CSS3 · Sass · WordPress</p>
+            <ul class="text-sm text-neutral-600">
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="RWD 響應式網頁" data-en="Responsive (RWD) web layouts">RWD 響應式網頁</li>
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="網站效能優化與 SEO 最佳化" data-en="Site performance and SEO optimization">網站效能優化與 SEO 最佳化</li>
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="運用 AI 輔助前端程式開發，完成網站互動效果" data-en="AI-assisted front-end coding for site interactions">運用 AI 輔助前端程式開發，完成網站互動效果</li>
+            </ul>
           </article>
-        </li>
-      </ul>
+          <article class="bg-white p-6 md:p-8">
+            <h3 class="mb-1.5 text-lg font-semibold" data-zh="UI/UX 設計" data-en="UI/UX Design">UI/UX 設計</h3>
+            <p class="mb-4 text-sm text-neutral-500">Figma · Wireframe · Prototype</p>
+            <ul class="text-sm text-neutral-600">
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="根據指標數據、用戶回饋制定優化策略" data-en="Optimization strategy driven by metrics and user feedback">根據指標數據、用戶回饋制定優化策略</li>
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="注重「使用者體驗」與「商業目標」的平衡" data-en="Balancing user experience with business goals">注重「使用者體驗」與「商業目標」的平衡</li>
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="熟悉 Web、iOS、Android 差異，掌握跨裝置設計眉角" data-en="Fluent across web, iOS and Android design nuances">熟悉 Web、iOS、Android 差異，掌握跨裝置設計眉角</li>
+            </ul>
+          </article>
+          <article class="bg-white p-6 md:p-8">
+            <h3 class="mb-1.5 text-lg font-semibold" data-zh="視覺設計" data-en="Visual Design">視覺設計</h3>
+            <p class="mb-4 text-sm text-neutral-500" data-zh="Illustrator · CIS 企劃設計" data-en="Illustrator · Brand identity systems">Illustrator · CIS 企劃設計</p>
+            <ul class="text-sm text-neutral-600">
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="依據產品定位與行銷需求，產出視覺設計" data-en="Visual output tailored to product positioning and marketing needs">依據產品定位與行銷需求，產出視覺設計</li>
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="廣告素材、行銷活動網頁、圖標、平面印刷" data-en="Ad creative, campaign pages, icons, print collateral">廣告素材、行銷活動網頁、圖標、平面印刷</li>
+            </ul>
+          </article>
+          <article class="bg-white p-6 md:p-8">
+            <h3 class="mb-1.5 text-lg font-semibold" data-zh="專案管理" data-en="Project Management">專案管理</h3>
+            <p class="mb-4 text-sm text-neutral-500" data-zh="確保成果符合團隊目標與期望" data-en="Delivering outcomes that meet team goals">確保成果符合團隊目標與期望</p>
+            <ul class="text-sm text-neutral-600">
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="企劃文件撰寫，包含目標、項目、時程規劃" data-en="Planning docs covering goals, scope, and timeline">企劃文件撰寫，包含目標、項目、時程規劃</li>
+              <li class="flex gap-2.5 border-t border-neutral-200 py-2.5 first:border-t-0 before:shrink-0 before:text-neutral-400 before:content-['—']" data-zh="人力資源分配與時程進度控管" data-en="Resourcing and schedule tracking">人力資源分配與時程進度控管</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 02 專案 ========== -->
+    <section id="work" aria-labelledby="work-title" class="border-b border-neutral-200 py-20 md:py-24">
+      <div class="mx-auto max-w-5xl px-4 md:px-8">
+        <div class="mb-12">
+          <p class="text-sm text-neutral-500" data-zh="02 — 專案成就" data-en="02 — Selected Work">02 — 專案成就</p>
+          <h2 id="work-title" class="text-3xl font-bold tracking-tight" data-zh="精選專案" data-en="Selected work">精選專案</h2>
+        </div>
+        <!-- PROJECT-LIST:START（與 /projects/ 共用同一份結構，修改時請同步） -->
+        <ul class="divide-y divide-neutral-200 border-y border-neutral-200">
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">01</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="10" y="14" width="180" height="102" rx="2"/><line x1="52" y1="14" x2="52" y2="116"/><line x1="10" y1="34" x2="52" y2="34"/><circle cx="22" cy="24" r="4"/><line x1="34" y1="24" x2="46" y2="24"/><line x1="20" y1="46" x2="44" y2="46"/><line x1="20" y1="58" x2="44" y2="58"/><line x1="20" y1="70" x2="44" y2="70"/><circle cx="172" cy="26" r="6"/><rect x="70" y="76" width="14" height="26"/><rect x="92" y="60" width="14" height="42"/><rect x="114" y="46" width="14" height="56"/><rect x="136" y="68" width="14" height="34"/><line x1="68" y1="102" x2="156" y2="102"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="mb-2 text-xl font-semibold" data-zh="婚禮商家後台管理系統" data-en="Wedding vendor back-office system">婚禮商家後台管理系統</h3>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="為婚禮服務平台「結婚吧」打造直觀高效的後台管理系統，協助商家輕鬆經營數位口碑與客源。" data-en="Built an intuitive, efficient back office for wedding-services platform Marry, helping vendors manage their digital presence and leads.">為婚禮服務平台「結婚吧」打造直觀高效的後台管理系統，協助商家輕鬆經營數位口碑與客源。</p>
+                <a href="/projects/merchant-dashboard/" class="mt-4 inline-flex items-center gap-1.5 border-b border-neutral-900 pb-0.5 text-sm transition-colors hover:border-neutral-500 hover:text-neutral-600">
+                  <span data-zh="前往查看" data-en="View case study">前往查看</span><span class="sr-only" data-zh="：婚禮商家後台管理系統" data-en=": Wedding vendor back-office system">：婚禮商家後台管理系統</span>
+                  <svg class="size-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
+                </a>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">02</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="20" y="24" width="160" height="18" rx="2"/><rect x="20" y="50" width="160" height="18" rx="2"/><rect x="20" y="76" width="160" height="18" rx="2"/><circle cx="30" cy="33" r="2"/><circle cx="36" cy="33" r="2"/><circle cx="30" cy="59" r="2"/><circle cx="36" cy="59" r="2"/><circle cx="30" cy="85" r="2"/><circle cx="36" cy="85" r="2"/><line x1="52" y1="33" x2="120" y2="33"/><line x1="52" y1="59" x2="110" y2="59"/><line x1="52" y1="85" x2="130" y2="85"/><path d="M162 27L168 33L162 39"/><path d="M168 79L162 85L168 91"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="mb-2 text-xl font-semibold" data-zh="列表頁排序更新" data-en="Listing page sort update">列表頁排序更新</h3>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="讓商家可提前安排物件自動更新排序，輕鬆提升曝光量。" data-en="Let vendors schedule automatic listing refreshes to boost visibility.">讓商家可提前安排物件自動更新排序，輕鬆提升曝光量。</p>
+                <p class="mt-4 text-sm text-neutral-500" data-zh="Case study 撰寫中" data-en="Case study coming soon">Case study 撰寫中</p>
+              </div>
+              <ul class="flex flex-col gap-1.5 text-sm md:items-end md:text-right">
+                <li data-zh="上線半年帶來營收 <b class=&quot;font-semibold&quot;>+5%</b>" data-en="Revenue <b class=&quot;font-semibold&quot;>+5%</b> within 6 months of launch">上線半年帶來營收 <b class="font-semibold">+5%</b></li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">03</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="14" y="18" width="172" height="96" rx="2"/><line x1="14" y1="34" x2="186" y2="34"/><circle cx="24" cy="26" r="2.4"/><circle cx="32" cy="26" r="2.4"/><circle cx="40" cy="26" r="2.4"/><rect x="26" y="46" width="42" height="30" rx="1.5"/><rect x="79" y="46" width="42" height="30" rx="1.5"/><rect x="132" y="46" width="42" height="30" rx="1.5"/><rect x="26" y="86" width="42" height="18" rx="1.5"/><rect x="79" y="86" width="42" height="18" rx="1.5"/><rect x="132" y="86" width="42" height="18" rx="1.5"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="mb-2 text-xl font-semibold" data-zh="喜餅品牌主頁改版" data-en="Bakery brand homepage redesign">喜餅品牌主頁改版</h3>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="優化新人（C 端）使用體驗以帶動線上預約，並為商家（B 端）提供直覺易懂的管理後台。" data-en="Improved the consumer booking experience while giving vendors an intuitive management console.">優化新人（C 端）使用體驗以帶動線上預約，並為商家（B 端）提供直覺易懂的管理後台。</p>
+                <p class="mt-4 text-sm text-neutral-500" data-zh="Case study 撰寫中" data-en="Case study coming soon">Case study 撰寫中</p>
+              </div>
+              <ul class="flex flex-col gap-1.5 text-sm md:items-end md:text-right">
+                <li data-zh="商家駐站數 <b class=&quot;font-semibold&quot;>+30%</b>" data-en="Vendor sign-ups <b class=&quot;font-semibold&quot;>+30%</b>">商家駐站數 <b class="font-semibold">+30%</b></li>
+                <li data-zh="新人預約數達標 <b class=&quot;font-semibold&quot;>103%</b>" data-en="Booking target reached <b class=&quot;font-semibold&quot;>103%</b>">新人預約數達標 <b class="font-semibold">103%</b></li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">04</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <path d="M100 22C82 22 68 36 68 54C68 78 100 108 100 108C100 108 132 78 132 54C132 36 118 22 100 22Z"/><circle cx="100" cy="54" r="10"/><path d="M30 100C30 100 44 92 58 96" stroke-dasharray="3 4"/><path d="M170 100C170 100 156 92 142 96" stroke-dasharray="3 4"/><circle cx="28" cy="102" r="3"/><circle cx="172" cy="102" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="mb-2 text-xl font-semibold" data-zh="找場地服務升級" data-en="Venue-finder upgrade">找場地服務升級</h3>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="延攬特色場地駐站、復盤找場地流程，讓新人快速找到理想婚禮場地。" data-en="Onboarded distinctive venues and reworked the search flow so couples find the right venue faster.">延攬特色場地駐站、復盤找場地流程，讓新人快速找到理想婚禮場地。</p>
+                <p class="mt-4 text-sm text-neutral-500" data-zh="Case study 撰寫中" data-en="Case study coming soon">Case study 撰寫中</p>
+              </div>
+              <ul class="flex flex-col gap-1.5 text-sm md:items-end md:text-right">
+                <li data-zh="商家更新率 <b class=&quot;font-semibold&quot;>78%</b>" data-en="Vendor update rate <b class=&quot;font-semibold&quot;>78%</b>">商家更新率 <b class="font-semibold">78%</b></li>
+                <li data-zh="場地詢問量 <b class=&quot;font-semibold&quot;>+6%</b>" data-en="Venue inquiries <b class=&quot;font-semibold&quot;>+6%</b>">場地詢問量 <b class="font-semibold">+6%</b></li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">05</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="34" y="24" width="90" height="66" rx="2"/><rect x="58" y="42" width="90" height="66" rx="2"/><line x1="70" y1="58" x2="130" y2="58"/><line x1="70" y1="70" x2="118" y2="70"/><line x1="70" y1="82" x2="126" y2="82"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="mb-2 text-xl font-semibold" data-zh="視覺設計精選 2021–2024" data-en="Visual design selects, 2021–2024">視覺設計精選 2021–2024</h3>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="依據產品定位與行銷目的，產出能形成轉換的視覺設計：活動頁、廣告素材、網頁動畫、印刷輸出。" data-en="Conversion-driven visual work spanning campaign pages, ad creative, web animation, and print.">依據產品定位與行銷目的，產出能形成轉換的視覺設計：活動頁、廣告素材、網頁動畫、印刷輸出。</p>
+                <p class="mt-4 text-sm text-neutral-500" data-zh="Case study 撰寫中" data-en="Case study coming soon">Case study 撰寫中</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+        <!-- PROJECT-LIST:END -->
+      </div>
+    </section>
+
+    <!-- ========== 03 經歷 ========== -->
+    <section id="experience" aria-labelledby="experience-title" class="border-b border-neutral-200 py-20 md:py-24">
+      <div class="mx-auto max-w-5xl px-4 md:px-8">
+        <div class="mb-12 flex flex-wrap items-baseline justify-between gap-6">
+          <div>
+            <p class="text-sm text-neutral-500" data-zh="03 — 工作經歷" data-en="03 — Experience">03 — 工作經歷</p>
+            <h2 id="experience-title" class="text-3xl font-bold tracking-tight" data-zh="經歷" data-en="Experience">經歷</h2>
+          </div>
+          <p class="text-sm text-neutral-500" data-zh="總年資 10–11 年" data-en="10–11 years total experience">總年資 10–11 年</p>
+        </div>
+
+        <!-- 時間軸：手機版線在 li 左側；md 以上年份移到左欄、線改畫在內容區左側 -->
+        <ol>
+          <li class="group relative grid gap-2 border-l border-neutral-200 pb-12 pl-6 md:grid-cols-[7rem_1fr] md:gap-8 md:border-l-0 md:pb-0 md:pl-0">
+            <p class="text-xs leading-6 text-neutral-500 md:text-right" data-zh="2025.04 — 至今" data-en="2025.04 — Present">2025.04 — 至今</p>
+            <div class="md:relative md:border-l md:border-neutral-200 md:pb-14 md:pl-8 md:group-last:pb-0">
+              <span class="absolute top-1.5 left-[-5.5px] md:top-2.5 size-2.5 rounded-full border-[1.5px] border-neutral-900 bg-neutral-900" aria-hidden="true"></span>
+              <h3 class="mb-1 text-xl font-semibold" data-zh="網頁設計師" data-en="Web Designer">網頁設計師</h3>
+              <p class="mb-3.5 text-sm text-neutral-600"><span data-zh="葳騰科技股份有限公司" data-en="Waiteng Technology Co., Ltd.">葳騰科技股份有限公司</span> · <span class="text-neutral-500" data-zh="電腦軟體服務業" data-en="Software services">電腦軟體服務業</span></p>
+              <ul class="max-w-2xl text-sm text-neutral-600">
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="多語系官網規劃、設計、開發與維護" data-en="Planned, designed, built and maintained a multilingual company site">多語系官網規劃、設計、開發與維護</li>
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="官網改版：視覺翻新、瀏覽及操作體驗優化" data-en="Site redesign — visual refresh and improved browsing experience">官網改版：視覺翻新、瀏覽及操作體驗優化</li>
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="規劃前端 SCSS 模組化資料夾架構，提升維護效率" data-en="Structured a modular SCSS architecture to improve maintainability">規劃前端 SCSS 模組化資料夾架構，提升維護效率</li>
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="針對 CWV 進行前端效能調校，重構語意化標籤" data-en="Tuned Core Web Vitals and rebuilt semantic markup">針對 CWV 進行前端效能調校，重構語意化標籤</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="group relative grid gap-2 border-l border-neutral-200 pb-12 pl-6 md:grid-cols-[7rem_1fr] md:gap-8 md:border-l-0 md:pb-0 md:pl-0">
+            <p class="text-xs leading-6 text-neutral-500 md:text-right">2019.04 — 2024.05</p>
+            <div class="md:relative md:border-l md:border-neutral-200 md:pb-14 md:pl-8 md:group-last:pb-0">
+              <span class="absolute top-1.5 left-[-5.5px] md:top-2.5 size-2.5 rounded-full border-[1.5px] border-neutral-900 bg-white" aria-hidden="true"></span>
+              <h3 class="mb-1 text-xl font-semibold" data-zh="網頁設計師 → 設計組長" data-en="Web Designer → Design Lead">網頁設計師 → 設計組長</h3>
+              <p class="mb-3.5 text-sm text-neutral-600"><span data-zh="數字科技股份有限公司" data-en="Digital Technology Inc.">數字科技股份有限公司</span> · <span class="text-neutral-500" data-zh="5 年 2 個月" data-en="5 yrs 2 mos">5 年 2 個月</span></p>
+              <ul class="max-w-2xl text-sm text-neutral-600">
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="商家後台設計，含收費方案、行銷工具、內容管理" data-en="Designed vendor back-office covering billing, marketing tools, content management">商家後台設計，含收費方案、行銷工具、內容管理</li>
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="行銷活動頁設計，成交率 +25%、付費商家 +5%" data-en="Campaign page design — conversion +25%, paid vendors +5%">行銷活動頁設計，成交率 +25%、付費商家 +5%</li>
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="直播功能設計，協助商家疫情期間最高單檔 +11 筆訂單" data-en="Designed livestream feature — up to +11 orders per session during the pandemic">直播功能設計，協助商家疫情期間最高單檔 +11 筆訂單</li>
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="2023 年晉升設計組長，帶領設計團隊，設計按時交付率達 99%" data-en="Promoted to Design Lead in 2023, leading the design team with a 99% on-time delivery rate">2023 年晉升設計組長，帶領設計團隊，設計按時交付率達 99%</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="group relative grid gap-2 border-l border-neutral-200 pb-12 pl-6 md:grid-cols-[7rem_1fr] md:gap-8 md:border-l-0 md:pb-0 md:pl-0">
+            <p class="text-xs leading-6 text-neutral-500 md:text-right">2017.03 — 2018.05</p>
+            <div class="md:relative md:border-l md:border-neutral-200 md:pb-14 md:pl-8 md:group-last:pb-0">
+              <span class="absolute top-1.5 left-[-5.5px] md:top-2.5 size-2.5 rounded-full border-[1.5px] border-neutral-900 bg-white" aria-hidden="true"></span>
+              <h3 class="mb-1 text-xl font-semibold" data-zh="行銷企劃" data-en="Marketing Planner">行銷企劃</h3>
+              <p class="mb-3.5 text-sm text-neutral-600"><span data-zh="科定企業股份有限公司" data-en="Keding Enterprise Co., Ltd.">科定企業股份有限公司</span> · <span class="text-neutral-500" data-zh="1 年 3 個月" data-en="1 yr 3 mos">1 年 3 個月</span></p>
+              <ul class="max-w-2xl text-sm text-neutral-600">
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="透過文字包裝品牌形象，各式品牌文案撰寫" data-en="Shaped brand voice through copywriting across formats">透過文字包裝品牌形象，各式品牌文案撰寫</li>
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="FB 粉專經營" data-en="Managed the brand's Facebook presence">FB 粉專經營</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="group relative grid gap-2 border-l border-neutral-200 pb-0 pl-6 md:grid-cols-[7rem_1fr] md:gap-8 md:border-l-0 md:pl-0">
+            <p class="text-xs leading-6 text-neutral-500 md:text-right">2016.01 — 2017.03</p>
+            <div class="md:relative md:border-l md:border-neutral-200 md:pb-14 md:pl-8 md:group-last:pb-0">
+              <span class="absolute top-1.5 left-[-5.5px] md:top-2.5 size-2.5 rounded-full border-[1.5px] border-neutral-900 bg-white" aria-hidden="true"></span>
+              <h3 class="mb-1 text-xl font-semibold" data-zh="視覺設計師" data-en="Visual Designer">視覺設計師</h3>
+              <p class="mb-3.5 text-sm text-neutral-600"><span data-zh="SHIMBI 祐宸實業有限公司" data-en="SHIMBI Yu Chen Enterprise Co., Ltd.">SHIMBI 祐宸實業有限公司</span> · <span class="text-neutral-500" data-zh="1 年 3 個月" data-en="1 yr 3 mos">1 年 3 個月</span></p>
+              <ul class="max-w-2xl text-sm text-neutral-600">
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="負責既有品牌與新品牌的所有平面設計" data-en="Owned all print design for existing and new brand lines">負責既有品牌與新品牌的所有平面設計</li>
+                <li class="relative py-1.5 pl-4 before:absolute before:left-0 before:text-neutral-400 before:content-['·']" data-zh="品牌識別、型錄與 DM 印刷輸出、商品照修圖" data-en="Brand identity, catalogue/DM print, product photo retouching">品牌識別、型錄與 DM 印刷輸出、商品照修圖</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+
+        <div class="mt-16">
+          <h3 class="mb-2 text-sm text-neutral-500" data-zh="學歷" data-en="Education">學歷</h3>
+          <div class="flex flex-wrap items-baseline justify-between gap-2 border-y border-neutral-200 py-5">
+            <div>
+              <p class="text-lg" data-zh="輔仁大學" data-en="Fu Jen Catholic University">輔仁大學</p>
+              <p class="mt-1 text-sm text-neutral-500" data-zh="中國文學系 · 學士" data-en="B.A., Chinese Literature">中國文學系 · 學士</p>
+            </div>
+            <p class="text-sm text-neutral-500">2009.07 — 2012.06</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 04 聯繫 ========== -->
+    <section id="contact" aria-labelledby="contact-title" class="py-20 md:py-24">
+      <div class="mx-auto max-w-5xl px-4 md:px-8">
+        <p class="text-sm text-neutral-500" data-zh="04 — 聯繫" data-en="04 — Contact">04 — 聯繫</p>
+        <h2 id="contact-title" class="mb-6 max-w-3xl text-4xl font-bold tracking-tight md:text-6xl" data-zh="有專案想討論嗎？" data-en="Have a project in mind?">有專案想討論嗎？</h2>
+        <p class="max-w-lg text-neutral-600" data-zh="目前接受全職工作機會，對遠端協作抱持開放態度。" data-en="Currently open to full-time roles, and happy to work remotely.">目前接受全職工作機會，對遠端協作抱持開放態度。</p>
+        <dl class="mt-10 flex flex-wrap gap-x-12 gap-y-6">
+          <div>
+            <dt class="mb-1.5 text-xs tracking-wider text-neutral-500 uppercase" data-zh="意向職稱" data-en="Target role">意向職稱</dt>
+            <dd>Senior Web Designer</dd>
+          </div>
+          <div>
+            <dt class="mb-1.5 text-xs tracking-wider text-neutral-500 uppercase" data-zh="地點" data-en="Location">地點</dt>
+            <dd data-zh="台北市 · 新北市板橋 / 新莊" data-en="Taipei · New Taipei (Banqiao / Xinzhuang)">台北市 · 新北市板橋 / 新莊</dd>
+          </div>
+          <div>
+            <dt class="mb-1.5 text-xs tracking-wider text-neutral-500 uppercase" data-zh="信箱" data-en="Email">信箱</dt>
+            <dd><a href="mailto:hello@carolfang.design" class="underline underline-offset-4 hover:text-neutral-600">hello@carolfang.design</a></dd>
+          </div>
+        </dl>
+      </div>
     </section>
   </main>
 
+  <!-- ========== Footer（三頁共用） ========== -->
   <footer class="border-t border-neutral-200">
-    <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-neutral-600 md:px-8">
-      <p>© 2026 Carol Fang</p>
+    <div class="mx-auto max-w-5xl px-4 py-8 text-xs text-neutral-500 md:px-8">
+      <p data-zh="© 2026 方盈智 Carol Fang" data-en="© 2026 Carol Fang">© 2026 方盈智 Carol Fang</p>
     </div>
   </footer>
 </body>

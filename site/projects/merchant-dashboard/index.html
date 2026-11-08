@@ -7,16 +7,25 @@
   <meta name="description" content="商家後台設計 case study：收費方案、數位行銷工具與內容上架管理。">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/lang.js" defer></script>
 </head>
 <body class="bg-white text-neutral-900 antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">跳至主要內容</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:bg-white focus:px-4 focus:py-2" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a>
 
-  <header class="border-b border-neutral-200">
-    <nav aria-label="主選單" class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 md:px-8">
-      <a href="/" class="font-semibold">Carol Fang</a>
-      <ul class="flex gap-6">
-        <li><a href="/projects/">專案 Projects</a></li>
+  <!-- ========== Header（三頁共用，修改時請同步） ========== -->
+  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
+    <nav aria-label="主選單" class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-6 px-4 md:px-8">
+      <a href="/" class="text-sm tracking-widest text-neutral-600 uppercase">Carol Fang</a>
+      <ul class="hidden gap-8 text-sm text-neutral-600 md:flex">
+        <li><a href="/#work" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="作品" data-en="Work">作品</a></li>
+        <li><a href="/#about" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="/#experience" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="經歷" data-en="Experience">經歷</a></li>
+        <li><a href="/#contact" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="聯繫" data-en="Contact">聯繫</a></li>
       </ul>
+      <div role="group" aria-label="語言 Language" class="flex overflow-hidden rounded-full border border-neutral-900 text-xs">
+        <button type="button" data-lang-btn="zh" aria-pressed="true" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">中</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false" lang="en" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">EN</button>
+      </div>
     </nav>
   </header>
 
@@ -48,9 +57,10 @@
     </article>
   </main>
 
+  <!-- ========== Footer（三頁共用） ========== -->
   <footer class="border-t border-neutral-200">
-    <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-neutral-600 md:px-8">
-      <p>© 2026 Carol Fang</p>
+    <div class="mx-auto max-w-5xl px-4 py-8 text-xs text-neutral-500 md:px-8">
+      <p data-zh="© 2026 方盈智 Carol Fang" data-en="© 2026 Carol Fang">© 2026 方盈智 Carol Fang</p>
     </div>
   </footer>
 </body>

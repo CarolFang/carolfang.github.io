@@ -4,39 +4,135 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>專案 Projects｜Carol Fang</title>
+  <title data-zh="專案 Projects｜Carol Fang" data-en="Projects | Carol Fang">專案 Projects｜Carol Fang</title>
   <meta name="description" content="Carol Fang 的網頁設計、產品設計與前端開發專案。">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/lang.js" defer></script>
 </head>
 <body class="bg-white text-neutral-900 antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">跳至主要內容</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:bg-white focus:px-4 focus:py-2" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a>
 
-  <header class="border-b border-neutral-200">
-    <nav aria-label="主選單" class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 md:px-8">
-      <a href="/" class="font-semibold">Carol Fang</a>
-      <ul class="flex gap-6">
-        <li><a href="/projects/" aria-current="page">專案 Projects</a></li>
+  <!-- ========== Header（三頁共用，修改時請同步） ========== -->
+  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
+    <nav aria-label="主選單" class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-6 px-4 md:px-8">
+      <a href="/" class="text-sm tracking-widest text-neutral-600 uppercase">Carol Fang</a>
+      <ul class="hidden gap-8 text-sm text-neutral-600 md:flex">
+        <li><a href="/#work" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="作品" data-en="Work">作品</a></li>
+        <li><a href="/#about" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="/#experience" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="經歷" data-en="Experience">經歷</a></li>
+        <li><a href="/#contact" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="聯繫" data-en="Contact">聯繫</a></li>
       </ul>
+      <div role="group" aria-label="語言 Language" class="flex overflow-hidden rounded-full border border-neutral-900 text-xs">
+        <button type="button" data-lang-btn="zh" aria-pressed="true" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">中</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false" lang="en" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">EN</button>
+      </div>
     </nav>
   </header>
 
-  <main id="main" class="mx-auto max-w-5xl px-4 py-16 md:px-8">
-    <h1 class="text-3xl font-bold md:text-4xl">專案 Projects</h1>
-    <ul class="mt-10 grid gap-6 md:grid-cols-2">
-      <li>
-        <article class="group h-full rounded-lg border border-neutral-200">
-          <a href="/projects/merchant-dashboard/" class="block h-full p-6">
-            <h2 class="text-lg font-semibold group-hover:underline">商家後台設計</h2>
-            <p class="mt-2 text-neutral-700">收費方案、數位行銷工具、內容上架管理的系統設計與長期迭代。</p>
-          </a>
-        </article>
-      </li>
-    </ul>
+  <main id="main" class="mx-auto max-w-5xl px-4 py-20 md:px-8 md:py-24">
+    <div class="mb-12">
+      <p class="text-sm text-neutral-500" data-zh="專案成就" data-en="Selected Work">專案成就</p>
+      <h1 class="text-3xl font-bold tracking-tight md:text-4xl" data-zh="專案 Projects" data-en="Projects">專案 Projects</h1>
+    </div>
+        <!-- PROJECT-LIST:START（與 /projects/ 共用同一份結構，修改時請同步） -->
+        <ul class="divide-y divide-neutral-200 border-y border-neutral-200">
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">01</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="10" y="14" width="180" height="102" rx="2"/><line x1="52" y1="14" x2="52" y2="116"/><line x1="10" y1="34" x2="52" y2="34"/><circle cx="22" cy="24" r="4"/><line x1="34" y1="24" x2="46" y2="24"/><line x1="20" y1="46" x2="44" y2="46"/><line x1="20" y1="58" x2="44" y2="58"/><line x1="20" y1="70" x2="44" y2="70"/><circle cx="172" cy="26" r="6"/><rect x="70" y="76" width="14" height="26"/><rect x="92" y="60" width="14" height="42"/><rect x="114" y="46" width="14" height="56"/><rect x="136" y="68" width="14" height="34"/><line x1="68" y1="102" x2="156" y2="102"/>
+                </svg>
+              </div>
+              <div>
+                <h2 class="mb-2 text-xl font-semibold" data-zh="婚禮商家後台管理系統" data-en="Wedding vendor back-office system">婚禮商家後台管理系統</h2>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="為婚禮服務平台「結婚吧」打造直觀高效的後台管理系統，協助商家輕鬆經營數位口碑與客源。" data-en="Built an intuitive, efficient back office for wedding-services platform Marry, helping vendors manage their digital presence and leads.">為婚禮服務平台「結婚吧」打造直觀高效的後台管理系統，協助商家輕鬆經營數位口碑與客源。</p>
+                <a href="/projects/merchant-dashboard/" class="mt-4 inline-flex items-center gap-1.5 border-b border-neutral-900 pb-0.5 text-sm transition-colors hover:border-neutral-500 hover:text-neutral-600">
+                  <span data-zh="前往查看" data-en="View case study">前往查看</span><span class="sr-only" data-zh="：婚禮商家後台管理系統" data-en=": Wedding vendor back-office system">：婚禮商家後台管理系統</span>
+                  <svg class="size-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg>
+                </a>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">02</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="20" y="24" width="160" height="18" rx="2"/><rect x="20" y="50" width="160" height="18" rx="2"/><rect x="20" y="76" width="160" height="18" rx="2"/><circle cx="30" cy="33" r="2"/><circle cx="36" cy="33" r="2"/><circle cx="30" cy="59" r="2"/><circle cx="36" cy="59" r="2"/><circle cx="30" cy="85" r="2"/><circle cx="36" cy="85" r="2"/><line x1="52" y1="33" x2="120" y2="33"/><line x1="52" y1="59" x2="110" y2="59"/><line x1="52" y1="85" x2="130" y2="85"/><path d="M162 27L168 33L162 39"/><path d="M168 79L162 85L168 91"/>
+                </svg>
+              </div>
+              <div>
+                <h2 class="mb-2 text-xl font-semibold" data-zh="列表頁排序更新" data-en="Listing page sort update">列表頁排序更新</h2>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="讓商家可提前安排物件自動更新排序，輕鬆提升曝光量。" data-en="Let vendors schedule automatic listing refreshes to boost visibility.">讓商家可提前安排物件自動更新排序，輕鬆提升曝光量。</p>
+                <p class="mt-4 text-sm text-neutral-500" data-zh="Case study 撰寫中" data-en="Case study coming soon">Case study 撰寫中</p>
+              </div>
+              <ul class="flex flex-col gap-1.5 text-sm md:items-end md:text-right">
+                <li data-zh="上線半年帶來營收 <b class=&quot;font-semibold&quot;>+5%</b>" data-en="Revenue <b class=&quot;font-semibold&quot;>+5%</b> within 6 months of launch">上線半年帶來營收 <b class="font-semibold">+5%</b></li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">03</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="14" y="18" width="172" height="96" rx="2"/><line x1="14" y1="34" x2="186" y2="34"/><circle cx="24" cy="26" r="2.4"/><circle cx="32" cy="26" r="2.4"/><circle cx="40" cy="26" r="2.4"/><rect x="26" y="46" width="42" height="30" rx="1.5"/><rect x="79" y="46" width="42" height="30" rx="1.5"/><rect x="132" y="46" width="42" height="30" rx="1.5"/><rect x="26" y="86" width="42" height="18" rx="1.5"/><rect x="79" y="86" width="42" height="18" rx="1.5"/><rect x="132" y="86" width="42" height="18" rx="1.5"/>
+                </svg>
+              </div>
+              <div>
+                <h2 class="mb-2 text-xl font-semibold" data-zh="喜餅品牌主頁改版" data-en="Bakery brand homepage redesign">喜餅品牌主頁改版</h2>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="優化新人（C 端）使用體驗以帶動線上預約，並為商家（B 端）提供直覺易懂的管理後台。" data-en="Improved the consumer booking experience while giving vendors an intuitive management console.">優化新人（C 端）使用體驗以帶動線上預約，並為商家（B 端）提供直覺易懂的管理後台。</p>
+                <p class="mt-4 text-sm text-neutral-500" data-zh="Case study 撰寫中" data-en="Case study coming soon">Case study 撰寫中</p>
+              </div>
+              <ul class="flex flex-col gap-1.5 text-sm md:items-end md:text-right">
+                <li data-zh="商家駐站數 <b class=&quot;font-semibold&quot;>+30%</b>" data-en="Vendor sign-ups <b class=&quot;font-semibold&quot;>+30%</b>">商家駐站數 <b class="font-semibold">+30%</b></li>
+                <li data-zh="新人預約數達標 <b class=&quot;font-semibold&quot;>103%</b>" data-en="Booking target reached <b class=&quot;font-semibold&quot;>103%</b>">新人預約數達標 <b class="font-semibold">103%</b></li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">04</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <path d="M100 22C82 22 68 36 68 54C68 78 100 108 100 108C100 108 132 78 132 54C132 36 118 22 100 22Z"/><circle cx="100" cy="54" r="10"/><path d="M30 100C30 100 44 92 58 96" stroke-dasharray="3 4"/><path d="M170 100C170 100 156 92 142 96" stroke-dasharray="3 4"/><circle cx="28" cy="102" r="3"/><circle cx="172" cy="102" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <h2 class="mb-2 text-xl font-semibold" data-zh="找場地服務升級" data-en="Venue-finder upgrade">找場地服務升級</h2>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="延攬特色場地駐站、復盤找場地流程，讓新人快速找到理想婚禮場地。" data-en="Onboarded distinctive venues and reworked the search flow so couples find the right venue faster.">延攬特色場地駐站、復盤找場地流程，讓新人快速找到理想婚禮場地。</p>
+                <p class="mt-4 text-sm text-neutral-500" data-zh="Case study 撰寫中" data-en="Case study coming soon">Case study 撰寫中</p>
+              </div>
+              <ul class="flex flex-col gap-1.5 text-sm md:items-end md:text-right">
+                <li data-zh="商家更新率 <b class=&quot;font-semibold&quot;>78%</b>" data-en="Vendor update rate <b class=&quot;font-semibold&quot;>78%</b>">商家更新率 <b class="font-semibold">78%</b></li>
+                <li data-zh="場地詢問量 <b class=&quot;font-semibold&quot;>+6%</b>" data-en="Venue inquiries <b class=&quot;font-semibold&quot;>+6%</b>">場地詢問量 <b class="font-semibold">+6%</b></li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="grid gap-6 py-8 md:grid-cols-[15rem_1fr_auto] md:gap-8">
+              <div class="relative flex aspect-4/3 items-center justify-center overflow-hidden bg-neutral-100 text-neutral-500">
+                <span class="absolute top-3 left-4 text-xs text-neutral-500">05</span>
+                <svg class="w-4/5" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                  <rect x="34" y="24" width="90" height="66" rx="2"/><rect x="58" y="42" width="90" height="66" rx="2"/><line x1="70" y1="58" x2="130" y2="58"/><line x1="70" y1="70" x2="118" y2="70"/><line x1="70" y1="82" x2="126" y2="82"/>
+                </svg>
+              </div>
+              <div>
+                <h2 class="mb-2 text-xl font-semibold" data-zh="視覺設計精選 2021–2024" data-en="Visual design selects, 2021–2024">視覺設計精選 2021–2024</h2>
+                <p class="max-w-xl text-sm text-neutral-600" data-zh="依據產品定位與行銷目的，產出能形成轉換的視覺設計：活動頁、廣告素材、網頁動畫、印刷輸出。" data-en="Conversion-driven visual work spanning campaign pages, ad creative, web animation, and print.">依據產品定位與行銷目的，產出能形成轉換的視覺設計：活動頁、廣告素材、網頁動畫、印刷輸出。</p>
+                <p class="mt-4 text-sm text-neutral-500" data-zh="Case study 撰寫中" data-en="Case study coming soon">Case study 撰寫中</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+        <!-- PROJECT-LIST:END -->
   </main>
 
+  <!-- ========== Footer（三頁共用） ========== -->
   <footer class="border-t border-neutral-200">
-    <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-neutral-600 md:px-8">
-      <p>© 2026 Carol Fang</p>
+    <div class="mx-auto max-w-5xl px-4 py-8 text-xs text-neutral-500 md:px-8">
+      <p data-zh="© 2026 方盈智 Carol Fang" data-en="© 2026 Carol Fang">© 2026 方盈智 Carol Fang</p>
     </div>
   </footer>
 </body>
