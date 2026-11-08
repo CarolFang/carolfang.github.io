@@ -152,7 +152,7 @@
                 <p class="inline-flex items-center gap-1 rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-foreground">
                   對應決策
                   <svg aria-hidden="true" class="size-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                  <a href="#d1" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D2</a>
+                  <a href="#d2" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D2</a>
                 </p>
               </div>
             </li>
@@ -164,7 +164,7 @@
                 <p class="inline-flex items-center gap-1 rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-foreground">
                   對應決策
                   <svg aria-hidden="true" class="size-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                  <a href="#d2" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D1</a>,
+                  <a href="#d1" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D1</a>,
                   <a href="#d3" class="inline-flex min-h-6 min-w-6 items-center justify-center underline-offset-2 hover:underline">D3</a>
                 </p>
               </div>
@@ -335,13 +335,12 @@
                 <p class="font-bold">選擇：檔案層級隔離，並讓舊樣式有明確的淘汰邊界。</p>
                 <ul class="list-disc ps-6">
                   <li><strong>main.css：</strong>全站共用的設計 token、基礎樣式與 header／footer。共用區塊統一使用新版，新舊頁面的導覽體驗一致。</li>
-                  <li><strong>頁面類別 CSS：</strong>依頁面類型拆分，每頁只載入需要的樣式，避免載入無用的 CSS。</li>
-                  <li><strong>legacy.css：</strong>把舊樣式集中成一個檔案，只有尚未改版的頁面載入；該頁改版後即移除引用。</li>
+                  <li><strong>legacy.css：</strong>舊版共用樣式集中在這個檔案，只有尚未改版的頁面載入；該頁改版後即移除引用</li>
                 </ul>
               </div>
-              <p><strong>取捨：</strong>過渡期要維護兩套樣式，但 legacy.css 讓「哪些舊程式碼還在用」一目了然。過渡期的跑版在引入 legacy.css 後即可解決，不影響上線節奏。</p>
-              <p><strong>上線後的演進：</strong>改版頁面越來越多後，main.css 持續變肥，每一頁都得載入其他頁面的樣式。上線後我把各頁面類別的樣式從 main.css 拆出（例如 home.css），main.css 只保留全站共用的部分，每頁只載入需要的樣式（成效見「<a href="#iteration" class="underline underline-offset-2 hover:text-muted-foreground">06 上線後迭代</a>」）。</p>
-              <p><strong>技術細節：</strong>SCSS 資料夾參考 7-1 pattern 的分層（abstracts／base／components）。上線時編譯為單一 main.css，上線後再改為頁面層級的 CSS 拆分（page-level CSS splitting），輸出 main.css 與各頁面類別的 CSS。新舊樣式的過渡方式對應工程上的 Strangler Fig pattern：舊樣式隔離在 legacy.css，每改版一頁就移除一個引用，直到舊系統被完全取代。色彩、字級、間距等 design tokens 抽成共用變數層，每個元件對應獨立的 partial，讓設計規範與程式碼結構一致。</p>
+              <p><strong>取捨：</strong>過渡期要維護兩套樣式，但 legacy.css 讓「哪些舊程式碼還在用」一目了然，過渡期的跑版也不影響上線節奏。</p>
+              <p><strong>上線後的演進：</strong>改版頁面變多後，main.css 持續變肥，每一頁都得載入其他頁面的樣式。我把頁面類別的樣式拆成獨立檔案（例如 home.css），main.css 只保留全站共用的部分，每頁只載入需要的樣式。</p>
+              <p><strong>技術細節：</strong>SCSS 資料夾參考 7-1 pattern 分層（abstracts／base／components），每個元件對應獨立的 partial；新舊樣式的過渡方式即工程上的 Strangler Fig pattern。</p>
 
               <figure class="flex max-w-[640px] flex-col gap-2">
                 <!-- 程式碼框固定最高 290px（同設計稿），內容可捲動 -->
@@ -667,11 +666,6 @@
                   <tr><th scope="row" class="font-normal">移除未使用的字型檔</th><td>移除完全未使用的 Google Fonts（Roboto）與 Font Awesome，減少約 127 KB 的 CSS</td></tr>
                 </tbody>
               </table>
-            </div>
-
-            <div>
-              <p><strong>成效：</strong>首頁載入的 CSS 檔案從約 234 KB 降至約 88 KB（−62%）。其中約 127 KB 來自移除兩支完全未使用的字型檔；另外將頁面類別樣式從 main.css 拆出後，首頁載入的 main.css＋home.css 也從約 97.6 KB 降至約 82.4 KB。</p>
-              <p class="text-[13px] text-ink-subtle">＊以 Chrome DevTools Coverage 量測，數值為未壓縮的檔案大小；比較對象為上線初期與迭代後的首頁。</p>
             </div>
           </div>
         </section>
