@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="zh-Hant" class="motion-safe:scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 輔助網頁設計：從發想到上線｜Carol Fang</title>
+  <meta name="description" content="從 AI 發想到上線：以 AI 加速視覺發散、以設計判斷收斂，將三種 Amazon Repricer 定價模式轉化為易懂的主視覺、功能示意圖與互動元件。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+  <!-- 只用在 AI Workflow 卡片的 1–5，用 text= 參數只下載這五個字元 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&text=12345&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/lang.js" defer></script>
+</head>
+<body class="bg-white font-sans leading-[1.6] text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:bg-white focus:px-4 focus:py-2" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a>
+
+  <!-- ========== Header（與 website-revamp 相同，修改時請同步） ========== -->
+  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
+    <nav aria-label="主選單" class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4">
+      <!-- 暫時：首頁尚未公開，品牌先不連結。恢復時改回 <a href="/" class="text-sm tracking-widest text-neutral-600 uppercase">Carol Fang</a> -->
+      <span class="text-sm tracking-widest text-neutral-600 uppercase">Carol Fang</span>
+      <!-- ===== 暫時隱藏 START：只公開本頁期間不顯示導覽與中英切換；恢復時刪掉這一行與下方 END 那一行 =====
+      <ul class="hidden gap-8 text-sm text-neutral-600 md:flex">
+        <li><a href="/#work" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="作品" data-en="Work">作品</a></li>
+        <li><a href="/#about" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="/#experience" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="經歷" data-en="Experience">經歷</a></li>
+        <li><a href="/#contact" class="border-b border-transparent pb-0.5 transition-colors hover:border-neutral-600" data-zh="聯繫" data-en="Contact">聯繫</a></li>
+      </ul>
+      <div role="group" aria-label="語言 Language" class="flex overflow-hidden rounded-full border border-neutral-900 text-xs">
+        <button type="button" data-lang-btn="zh" aria-pressed="true" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">中</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false" lang="en" class="cursor-pointer px-4 py-1.5 text-neutral-600 transition-colors aria-pressed:bg-neutral-900 aria-pressed:text-white">EN</button>
+      </div>
+      ===== 暫時隱藏 END ===== -->
+    </nav>
+  </header>
+
+  <main id="main">
+    <article>
+      <!-- ========== 專案開頭：Hero（標題、摘要、專案資訊｜主視覺） ========== -->
+      <header class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 md:py-20">
+        <!-- 同 website-revamp：lg 以上左右兩欄，items-end 讓右側圖片與左側專案資訊卡底部對齊 -->
+        <div class="grid items-end gap-8 lg:grid-cols-2">
+          <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-4">
+              <h1 class="text-3xl leading-[1.2] font-bold md:text-[2.5rem]">AI 輔助網頁設計：從發想到上線</h1>
+              <p class="text-xl text-muted-foreground md:text-2xl">以 Amazon 定價工具產品功能頁為例</p>
+              <div class="flex flex-col gap-4">
+                <p>如何讓使用者在短時間內理解抽象的定價工具？我以 Gemini 探索視覺方向，在 Figma 以向量素材收斂成品牌一致的主視覺，再用 Claude 製作 Prototype 驗證互動、輔助前端實作。</p>
+                <p><strong>以 AI 加速發散，以設計判斷收斂，讓視覺創意真正落地。</strong></p>
+              </div>
+            </div>
+
+            <section aria-labelledby="info" class="flex flex-col gap-4 rounded-card bg-muted p-6 md:p-8">
+              <h2 id="info" class="text-xl leading-[1.2] font-bold">專案資訊</h2>
+              <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2">
+                <dt class="font-bold">角色</dt>
+                <dd>Web Designer：視覺設計、插畫編排、互動設計、前端實作</dd>
+                <dt class="font-bold">協作</dt>
+                <dd>Growth Marketing Manager × 1（文案、內容架構）</dd>
+                <dt class="font-bold">範圍</dt>
+                <dd>3 個功能頁：Rule-Based／AI／Conditional Repricer</dd>
+                <dt class="font-bold">AI 工具</dt>
+                <dd>Gemini（視覺方向探索）、Claude（互動 Prototype、前端實作輔助）</dd>
+                <dt class="font-bold">設計工具</dt>
+                <dd>Figma（向量素材編排與視覺優化）</dd>
+              </dl>
+            </section>
+          </div>
+
+          <!-- 首屏圖片：fetchpriority="high" 讓瀏覽器優先下載（影響 LCP），不加 loading="lazy"。width/height 讓瀏覽器預留空間，避免版面跳動（CLS） -->
+          <img src="/assets/images/projects/repricer-visual/hero-visual.webp" alt="三個 Repricer 功能頁主視覺的組合" width="1216" height="768" fetchpriority="high" decoding="async" class="h-auto w-full rounded-card">
+        </div>
+      </header>
+
+      <!-- ========== 內文：01–06 各節之間以分隔線隔開 ========== -->
+      <div class="mx-auto flex max-w-7xl flex-col gap-12 px-4 pb-20 md:gap-16 md:pt-20">
+
+        <!-- ===== 01 專案背景 ===== -->
+        <section aria-labelledby="background" class="flex flex-col gap-8">
+          <h2 id="background" class="text-2xl leading-[1.2] font-bold">01｜專案背景：三種定價邏輯，一種比一種抽象</h2>
+          <div class="flex flex-col gap-4">
+            <p>BQool Repricer 是協助 Amazon 賣家自動調整商品售價的工具，提供三種不同的定價模式：</p>
+
+            <!-- 表格樣式同 website-revamp「目標 3｜效能與技術指標」：白底、無外框，只保留列與列之間的分隔線。
+                 外層可左右捲動（手機寬度不足時），tabindex 讓鍵盤使用者也能捲動 -->
+            <div role="region" aria-labelledby="modes-caption" tabindex="0" class="max-w-[940px] overflow-x-auto focus-visible:outline-2 focus-visible:outline-muted-foreground">
+              <table class="w-full min-w-[36rem] border-collapse text-left [&_td]:p-3 [&_td]:align-top [&_th]:p-3 [&_th]:align-top [&_tr]:border-b [&_tr]:border-line">
+                <caption id="modes-caption" class="sr-only">三種 Repricer 定價模式比較</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" class="w-[220px] font-medium">產品模式</th>
+                    <th scope="col" class="font-medium">核心功能</th>
+                    <th scope="col" class="font-medium">使用者需要理解的事</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="font-normal">Rule-Based Repricer</th>
+                    <td>自訂比價規則</td>
+                    <td>如何透過手動設定控制定價策略</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="font-normal">AI Repricer</th>
+                    <td>8 種 AI 定價策略</td>
+                    <td>不同策略如何影響銷售與利潤</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="font-normal">Conditional Repricer</th>
+                    <td>23 種商業條件</td>
+                    <td>系統如何依據市場及業務條件自動切換規則</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>這次專案配合行銷團隊的 SEO 優化需求，重新規劃三個功能頁的內容與視覺呈現。由於三種產品的功能邏輯與抽象程度不同，設計上面臨兩個主要挑戰：</p>
+          </div>
+
+          <!-- 兩個挑戰在 md 以上並排；灰底卡片同 website-revamp「03 目標」（rounded-card bg-muted p-6） -->
+          <ol class="grid gap-4 md:grid-cols-2 md:gap-8">
+            <li class="flex flex-col gap-2 rounded-card bg-muted p-6">
+              <h3 class="font-bold">挑戰一：如何將抽象功能轉化為直覺的視覺訊息？</h3>
+              <p>定價策略涉及大量條件、數據與設定邏輯，單靠文字說明不容易讓使用者快速理解。尤其 Conditional Repricer 涉及的是「依照條件決定使用哪一套規則」，更需要透過視覺呈現解釋其運作方式。</p>
+            </li>
+            <li class="flex flex-col gap-2 rounded-card bg-muted p-6">
+              <h3 class="font-bold">挑戰二：如何改善既有互動方式？</h3>
+              <p>舊版 AI Rules 輪播只能透過左右箭頭逐張切換，使用者無法直接跳至指定策略，也缺乏快速瀏覽所有選項的方式。</p>
+            </li>
+          </ol>
+
+          <p>因此，這次改版除了重新設計產品視覺，也同步改善功能資訊的呈現方式與互動體驗。</p>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 02 AI Workflow ===== -->
+        <section aria-labelledby="workflow" class="flex flex-col gap-8">
+          <h2 id="workflow" class="text-2xl leading-[1.2] font-bold">02｜AI Workflow：AI 負責發散，設計師負責收斂</h2>
+          <div class="flex flex-col gap-4">
+            <p>這次專案將 AI 融入視覺探索、互動驗證與前端實作，而非直接將生成結果作為最終設計。我的工作流程分為五個階段：</p>
+          </div>
+
+          <!-- 五階段流程卡：沿用 website-revamp「03 目標」卡片（灰底、裝飾大數字、白色膠囊標籤）。
+               卡片內 flex items-center：數字在左、文案在右並垂直置中；右側 flex-col 讓名稱與標籤上下排列。
+               sm:grid-cols-2 lg:grid-cols-5：手機 1 欄、平板 2 欄、桌機 5 欄一排。
+               每張卡片的名稱連到下方對應段落（#step-1…），scroll-mt-24 預留 sticky header 高度 -->
+          <ol class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <li class="flex items-center gap-4 rounded-card bg-muted p-6">
+              <!-- 大數字只是裝飾（順序已由 <ol> 表達），aria-hidden 讓讀屏軟體略過 -->
+              <span aria-hidden="true" class="font-numeral text-6xl leading-none font-bold text-accent-soft italic">1</span>
+              <div class="flex flex-col items-start gap-2">
+                <a href="#step-1" class="text-lg font-bold underline-offset-2 hover:underline">視覺發散</a>
+                <p class="rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-strong">Gemini</p>
+              </div>
+            </li>
+            <li class="flex items-center gap-4 rounded-card bg-muted p-6">
+              <span aria-hidden="true" class="font-numeral text-6xl leading-none font-bold text-accent-soft italic">2</span>
+              <div class="flex flex-col items-start gap-2">
+                <a href="#step-2" class="text-lg font-bold underline-offset-2 hover:underline">設計判斷</a>
+                <p class="rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-strong">篩選標準</p>
+              </div>
+            </li>
+            <li class="flex items-center gap-4 rounded-card bg-muted p-6">
+              <span aria-hidden="true" class="font-numeral text-6xl leading-none font-bold text-accent-soft italic">3</span>
+              <div class="flex flex-col items-start gap-2">
+                <a href="#step-3" class="text-lg font-bold underline-offset-2 hover:underline">視覺收斂</a>
+                <p class="rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-strong">Figma</p>
+              </div>
+            </li>
+            <li class="flex items-center gap-4 rounded-card bg-muted p-6">
+              <span aria-hidden="true" class="font-numeral text-6xl leading-none font-bold text-accent-soft italic">4</span>
+              <div class="flex flex-col items-start gap-2">
+                <a href="#step-4" class="text-lg font-bold underline-offset-2 hover:underline">互動驗證</a>
+                <p class="rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-strong">Claude</p>
+              </div>
+            </li>
+            <li class="flex items-center gap-4 rounded-card bg-muted p-6">
+              <span aria-hidden="true" class="font-numeral text-6xl leading-none font-bold text-accent-soft italic">5</span>
+              <div class="flex flex-col items-start gap-2">
+                <a href="#step-5" class="text-lg font-bold underline-offset-2 hover:underline">前端實作</a>
+                <p class="rounded-full bg-white px-3 py-0.5 text-[13px] font-medium text-muted-strong">AI 輔助</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="flex flex-col gap-16">
+            <!-- 階段標題沿用 website-revamp 決策標題（D1…）的樣式 -->
+            <section id="step-1" aria-labelledby="step-1-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="step-1-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">01. <span lang="en">Visual Exploration</span>｜探索視覺可能性</h3>
+              <p>針對三種產品的功能特性，使用 Gemini 快速探索不同的構圖與視覺表現方式。相較於從零開始繪製草圖，AI 能在短時間內提供多種視覺方向，協助我比較不同的構圖邏輯，並探索原先可能沒有想到的表現方式。</p>
+            </section>
+
+            <section id="step-2" aria-labelledby="step-2-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="step-2-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">02. <span lang="en">Design Refinement</span>｜篩選與設計判斷</h3>
+              <p>生成結果並非都能直接應用於功能頁設計。在檢視探索稿後，我發現部分畫面過度依賴文字說明，使用者仍然需要閱讀大量文字才能理解圖像所要傳達的功能；另外，生成的點陣圖也不利於後續局部修改與素材重組。</p>
+              <p>因此，我將 AI 定位為視覺發想工具，主要保留有價值的構圖與視覺概念，而非直接採用生成圖像。</p>
+              <div>
+                <p>這個階段的篩選標準包括：</p>
+                <ul class="list-disc ps-6">
+                  <li><strong>資訊清晰度：</strong>能否透過圖像本身傳達功能，而不是依賴大量文字解釋。</li>
+                  <li><strong>品牌一致性：</strong>是否符合既有網站的色彩、視覺語言與設計系統。</li>
+                  <li><strong>延伸彈性：</strong>是否方便修改內容、替換素材及延伸至其他頁面。</li>
+                </ul>
+              </div>
+              <!-- 寬幅橫條圖（1760×246）：用 w-full 撐滿內文寬度，h-auto 依比例自動算高度 -->
+              <figure class="flex flex-col gap-2">
+                <img src="/assets/images/projects/repricer-visual/gemini-gen.webp" alt="多組以 Gemini 生成的視覺探索稿" width="1760" height="246" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+                <figcaption class="text-sm text-ink-subtle">Gemini 生成的視覺探索稿：畫面依賴大量文字說明，且為無法局部修改的點陣圖，因此只作為構圖參考，不直接使用</figcaption>
+              </figure>
+            </section>
+
+            <section id="step-3" aria-labelledby="step-3-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="step-3-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">03. <span lang="en">Visual Refinement</span>｜Figma 向量重組</h3>
+              <p>依照篩選後的構圖方向，從素材庫取得適合的向量素材，並在 Figma 中重新編排。過程中沿用官網既有的色彩規範與元件風格，調整構圖比例、視覺層級及圖像細節，並將文字精簡為必要的關鍵字標籤。</p>
+              <p>最終保留向量格式，讓圖像中的個別元素都能獨立調整，避免後續功能或文案異動時，必須重新生成整張圖片。</p>
+              <!-- 探索圖 vs 最終完稿：標籤與排法同 website-revamp D1 的新舊版對照。
+                   md 以上兩欄、每欄最寬 400px（minmax(0,400px)）；手機改為上下堆疊、寬度隨螢幕縮放。
+                   最終完稿沿用 03.webp。width/height 為圖檔實際尺寸，用來預留空間避免版面跳動 -->
+              <figure class="flex flex-col gap-2">
+                <figcaption class="text-sm font-bold text-muted-foreground">探索圖與最終完稿對照</figcaption>
+                <div class="grid gap-6 md:w-fit md:grid-cols-[repeat(2,minmax(0,400px))]">
+                  <div class="flex flex-col items-start gap-2">
+                    <span class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">探索圖</span>
+                    <img src="/assets/images/projects/repricer-visual/refinement-explore.webp" alt="Gemini 生成的 Conditional Repricer 探索圖" width="880" height="480" loading="lazy" decoding="async" class="h-auto w-full max-w-[400px] rounded-card">
+                  </div>
+                  <div class="flex flex-col items-start gap-2">
+                    <span class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">最終完稿</span>
+                    <img src="/assets/images/projects/repricer-visual/03.webp" alt="以向量素材在 Figma 重新編排的 Conditional Repricer 最終完稿" width="1340" height="830" loading="lazy" decoding="async" class="h-auto w-full max-w-[400px] rounded-card">
+                  </div>
+                </div>
+              </figure>
+            </section>
+
+            <section id="step-4" aria-labelledby="step-4-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="step-4-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">04. <span lang="en">Interaction Validation</span>｜Claude Prototype 驗證</h3>
+              <p>除了視覺設計，也運用 Claude 快速製作可操作的互動 Prototype。相較於靜態設計稿，Prototype 能讓協作者直接操作互動元件，提早發現操作方式與預期不一致的地方，作為討論及定案的依據。</p>
+              <p>AI 在這個階段主要協助快速建立互動雛形，我則負責確認操作邏輯、評估使用體驗，並依照討論結果調整設計。</p>
+            </section>
+
+            <section id="step-5" aria-labelledby="step-5-title" class="flex scroll-mt-24 flex-col gap-4">
+              <h3 id="step-5-title" class="text-xl leading-[1.2] font-bold text-muted-foreground">05. <span lang="en">Web Implementation</span>｜AI 輔助前端實作</h3>
+              <p>在正式實作階段，我同樣運用 Claude 協助產出互動程式。<br>
+                為了讓生成結果符合既有網站的技術環境與視覺規範，我先提供網站使用的基本變數作為參考，讓 Claude 依照既有設定產出程式，再由我實際套用至頁面，微調間距等視覺細節，完成整合與上線。<br>
+                透過這種方式，我能將 AI 生成的程式作為實作起點，減少從零撰寫互動效果的時間，同時保留對最終視覺呈現與品質的掌控。</p>
+            </section>
+          </div>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 03 設計決策一：主視覺 ===== -->
+        <section id="d1" aria-labelledby="d1-title" class="flex scroll-mt-24 flex-col gap-8">
+          <h2 id="d1-title" class="text-2xl leading-[1.2] font-bold">03｜設計決策一：主視覺設計，以圖像說明產品價值</h2>
+          <div class="flex flex-col gap-4">
+            <p>三個產品的功能邏輯不同，但在視覺上需要維持一致性，同時讓使用者能快速辨識各自的核心特色。</p>
+            <div>
+              <p>因此，我建立一套共通的插畫呈現規則：</p>
+              <ul class="list-disc ps-6">
+                <li><strong>構圖邏輯：</strong>左側呈現設定、輸入或操作，右側呈現系統處理結果。</li>
+                <li><strong>視覺識別：</strong>以粉紫色膠囊標籤標示各產品的核心特性。</li>
+                <li><strong>色彩規範：</strong>沿用官網既有的藍色漸層背景。</li>
+                <li><strong>素材格式：</strong>以向量素材組成，方便局部調整與後續延伸。</li>
+              </ul>
+            </div>
+            <p>在維持整體視覺一致性的前提下，依照每項產品的功能特性調整圖像內容。</p>
+          </div>
+
+          <!-- 三個產品各一張灰底卡片（同 website-revamp「目標 1｜重點頁面」的卡片樣式）：
+               標題列＝產品名稱＋右側「看上線頁面」外連；下方說明文字＋新舊版並排。
+               灰底上的連結用 text-muted-strong（#62748e 在灰底上對比不足 4.5:1） -->
+          <div class="flex flex-col gap-8">
+            <section aria-labelledby="hero-rule" class="flex flex-col gap-4 rounded-card bg-muted p-4 md:p-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <h3 id="hero-rule" class="text-lg font-bold"><span lang="en">Rule-Based Repricer</span>｜<span lang="en">Customizable</span></h3>
+                <a href="https://www.bqool.com/repricing/rule-based-repricer/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看上線頁面<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：Rule-Based Repricer 功能頁（另開新視窗）</span></a>
+              </div>
+              <div class="flex flex-col gap-4">
+                <p>以進階規則設定面板呈現賣家如何自訂定價條件，並以持續上升的利潤曲線收尾，強調賣家真正在意的結果：自訂的定價策略最終轉化為利潤成長。</p>
+              </div>
+              <!-- 新舊版並排：md 以上兩欄、每欄最寬 420px（同 website-revamp D1）；items-start 讓高度不同的兩張圖上緣對齊 -->
+              <div class="grid items-start gap-6 md:w-fit md:grid-cols-[repeat(2,minmax(0,420px))]">
+                <div class="flex flex-col items-start gap-2">
+                  <span class="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-muted-strong">舊版</span>
+                  <img src="/assets/images/projects/repricer-visual/01-before.webp" alt="舊版 Rule-Based Repricer 主視覺：以筆電呈現產品介面截圖" width="850" height="303" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+                </div>
+                <div class="flex flex-col items-start gap-2">
+                  <span class="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-muted-strong">新版</span>
+                  <img src="/assets/images/projects/repricer-visual/01.webp" alt="Rule-Based Repricer 主視覺：進階設定面板與利潤成長曲線" width="1340" height="830" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="hero-ai" class="flex flex-col gap-4 rounded-card bg-muted p-4 md:p-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <h3 id="hero-ai" class="text-lg font-bold"><span lang="en">AI Repricer</span>｜<span lang="en">AI MODEL</span></h3>
+                <a href="https://www.bqool.com/repricing/ai-repricer/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看上線頁面<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：AI Repricer 功能頁（另開新視窗）</span></a>
+              </div>
+              <div class="flex flex-col gap-4">
+                <p>以「選擇 AI 規則 → AI 達成目標 → 擴大全球營收」三個階段呈現運作方式，並在畫面右側以銷售成長曲線與利潤率提升的示意收尾，讓賣家一眼看到使用後能得到的實際成果。</p>
+              </div>
+              <div class="grid items-start gap-6 md:w-fit md:grid-cols-[repeat(2,minmax(0,420px))]">
+                <div class="flex flex-col items-start gap-2">
+                  <span class="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-muted-strong">舊版</span>
+                  <img src="/assets/images/projects/repricer-visual/02-before.webp" alt="舊版 AI Repricer 主視覺：以筆電呈現產品介面截圖" width="850" height="328" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+                </div>
+                <div class="flex flex-col items-start gap-2">
+                  <span class="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-muted-strong">新版</span>
+                  <img src="/assets/images/projects/repricer-visual/02.webp" alt="AI Repricer 主視覺：選擇 AI 規則、達成目標、擴大營收的三步驟流程" width="1340" height="830" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="hero-conditional" class="flex flex-col gap-4 rounded-card bg-muted p-4 md:p-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <h3 id="hero-conditional" class="text-lg font-bold"><span lang="en">Conditional Repricer</span>｜<span lang="en">AUTO SWITCH</span></h3>
+                <a href="https://www.bqool.com/repricing/conditional-repricer/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看上線頁面<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：Conditional Repricer 功能頁（另開新視窗）</span></a>
+              </div>
+              <div class="flex flex-col gap-4">
+                <p>三個產品中，Conditional Repricer 的功能邏輯最為抽象，因為它不只是執行既有的定價規則，而是根據不同商業條件，自動判斷應該套用哪一套規則。</p>
+                <p>在視覺探索階段，我先參考 AI 生成的圖像，尋找適合表現這種自動判斷與切換邏輯的構圖方向，再依照實際功能重新提煉與簡化。</p>
+                <p>最終以「營運狀況 → 核心判斷 → 規則切換」的視覺關係作為主要構圖：系統依據賣家當下的營運狀況進行判斷（圖中以庫存、銷售表現與競爭數據為例），再自動切換對應的定價規則（Rule 1／2／3）。</p>
+                <p>透過簡化圖像中的元素與文字，讓原本抽象的條件判斷過程轉化為較直覺的視覺流程。</p>
+              </div>
+              <div class="grid items-start gap-6 md:w-fit md:grid-cols-[repeat(2,minmax(0,420px))]">
+                <div class="flex flex-col items-start gap-2">
+                  <span class="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-muted-strong">舊版</span>
+                  <img src="/assets/images/projects/repricer-visual/03-before.webp" alt="舊版 Conditional Repricer 主視覺：以筆電呈現產品介面截圖" width="850" height="306" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+                </div>
+                <div class="flex flex-col items-start gap-2">
+                  <span class="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-muted-strong">新版</span>
+                  <img src="/assets/images/projects/repricer-visual/03.webp" alt="Conditional Repricer 主視覺：庫存、銷售、競爭數據輸入後自動切換定價規則" width="1340" height="830" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 04 設計決策二：AI Rules 輪播 ===== -->
+        <section id="d2" aria-labelledby="d2-title" class="flex scroll-mt-24 flex-col gap-8">
+          <h2 id="d2-title" class="text-2xl leading-[1.2] font-bold">04｜設計決策二：<span lang="en">AI Rules</span> 輪播，以 Prototype 驗證互動方案</h2>
+
+          <div class="flex flex-col gap-4">
+            <!-- 小標樣式同 website-revamp「06 上線後迭代」的 h3 -->
+            <h3 class="font-bold text-muted-foreground"><span lang="en">Problem</span>｜舊版互動限制</h3>
+            <p>舊版 AI Rules 採用傳統左右箭頭輪播，使用者只能逐張瀏覽策略卡片，無法直接跳轉至指定項目，快速比較不同規則也較不方便。</p>
+            <!-- 舊版圖緊接問題描述，讓讀者對照文字與畫面；標籤樣式同 website-revamp D1 -->
+            <figure class="flex max-w-[880px] flex-col items-start gap-2">
+              <span class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">舊版</span>
+              <img src="/assets/images/projects/repricer-visual/rules-carousel-before.webp" alt="舊版 AI Rules 輪播：只能用左右箭頭逐張切換" width="1363" height="524" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+            </figure>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <h3 class="font-bold text-muted-foreground"><span lang="en">Design Approach</span>｜將資訊架構轉化為可操作的介面</h3>
+            <div>
+              <p>行銷經理提出以「Sales Focus ↔ Profit Focus」作為策略分類方向，並搭配 Buy Box 開關，將 8 種 AI Rules 分成兩組：</p>
+              <ul class="list-disc ps-6">
+                <li>可低於 Buy Box 價格：5 種規則。</li>
+                <li>不低於 Buy Box 價格：3 種規則。</li>
+              </ul>
+            </div>
+            <p>我的設計是將這套資訊架構轉化為可互動的節點導覽。</p>
+            <p>光譜上的每個節點對應一張策略卡片，使用者點擊任一節點，就能直接切換至指定內容，不必再透過左右箭頭逐張瀏覽。</p>
+            <!-- 新版圖接在設計說明之後；寬幅截圖，最寬 880px、不裁切 -->
+            <figure class="flex max-w-[880px] flex-col items-start gap-2">
+              <!-- 標籤＋外連同一列：items-center 讓兩者垂直置中；連結樣式同 03 的「看上線頁面」 -->
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+                <span class="rounded-full bg-line px-3 py-1.5 text-sm font-bold text-muted-strong">新版</span>
+                <a href="https://www.bqool.com/repricing/ai-repricer/#tab-can-go-under" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm text-muted-strong underline underline-offset-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-muted-foreground">看實際功能<svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">：AI Repricer 功能頁的 AI Rules 輪播（另開新視窗）</span></a>
+              </div>
+              <img src="/assets/images/projects/repricer-visual/rules-carousel-after.webp" alt="新版 AI Rules 輪播：Buy Box 開關與 Sales Focus 到 Profit Focus 的光譜節點，點擊節點即可直接切換卡片" width="1600" height="736" loading="lazy" decoding="async" class="h-auto w-full rounded-card">
+            </figure>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <h3 class="font-bold text-muted-foreground"><span lang="en">Prototype Validation</span>｜透過 AI 加速互動驗證</h3>
+            <p>為了確認新的互動方式是否符合使用需求，我使用 Claude 快速製作可操作的 Prototype，提供行銷經理實際體驗。</p>
+            <p>測試過程中，對方提出希望節點列也能透過拖拉方式操作。</p>
+            <p>經過討論與評估，我提出保留點擊選擇，並放大節點可點擊範圍的方案，兼顧操作便利性與實作可行性。</p>
+            <p class="text-lg font-bold">最終取捨：保留點擊操作，不採用拖拉。</p>
+            <div>
+              <p>主要考量如下：</p>
+              <ul class="list-disc ps-6">
+                <li><strong>操作效率：</strong>依 Buy Box 狀態，畫面僅有 3 或 5 個可選節點。使用者點擊即可直接跳轉，不需要按住滑鼠並移動至指定位置。</li>
+                <li><strong>操作直覺：</strong>節點本身就是明確的選擇目標，透過點擊即可完成切換，不需要額外學習拖拉操作方式。</li>
+                <li><strong>實作與維護：</strong>點擊切換的互動邏輯較單純，也能減少拖拉所需的連續位置判斷、觸控處理與狀態管理。</li>
+              </ul>
+            </div>
+            <p>此外，這個設計方向也考量到無障礙操作。WCAG 2.2 的 2.5.7 <span lang="en">Dragging Movements</span> 要求涉及拖曳的功能必須提供不需拖曳的單指標操作替代方式。因此，點擊節點可以作為不依賴拖曳的操作方式。</p>
+            <p>透過 AI Prototype 提前讓協作者參與互動驗證，不但能在正式開發前對齊使用方式，也讓設計討論從抽象的需求描述，轉化為具體可操作的體驗。</p>
+          </div>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 05 專案成果 ===== -->
+        <section aria-labelledby="results" class="flex flex-col gap-8">
+          <h2 id="results" class="text-2xl leading-[1.2] font-bold">05｜專案成果</h2>
+          <p>這次專案完成三個功能頁的視覺與互動設計，將 AI 應用從視覺探索延伸至互動驗證與前端實作，並建立能跨功能頁延用的視覺設計規則。</p>
+
+          <!-- 三組成果：md 以上三欄並排，灰底卡片同 website-revamp「目標」卡片 -->
+          <div class="grid gap-4 md:grid-cols-3 md:gap-8">
+            <section aria-labelledby="result-visual" class="flex flex-col gap-2 rounded-card bg-muted p-6">
+              <h3 id="result-visual" lang="en" class="text-xl font-bold">Visual Design</h3>
+              <ul class="list-disc ps-6">
+                <li>完成 3 個功能頁的主視覺、功能示意圖與插畫編排。</li>
+                <li>建立共通的插畫構圖與視覺呈現規則，維持不同功能頁的品牌一致性。</li>
+                <li>全面採用可編輯的向量素材，保留後續調整與延伸彈性。</li>
+                <li>後續將同一套插畫設計規則延伸應用於 <span lang="en">AI Advertising Feature Page</span> 的 Hero，維持不同產品線的視覺一致性。</li>
+              </ul>
+            </section>
+            <section aria-labelledby="result-interaction" class="flex flex-col gap-2 rounded-card bg-muted p-6">
+              <h3 id="result-interaction" lang="en" class="text-xl font-bold">Interaction Design</h3>
+              <ul class="list-disc ps-6">
+                <li>改善 AI Rules 輪播操作方式，從逐張切換改為節點直接選擇。</li>
+                <li>透過 Claude 製作可操作的 Prototype，協助利害關係人在正式開發前確認互動方式。</li>
+              </ul>
+            </section>
+            <section aria-labelledby="result-ai" class="flex flex-col gap-2 rounded-card bg-muted p-6">
+              <h3 id="result-ai" lang="en" class="text-xl font-bold">AI-assisted Workflow</h3>
+              <ul class="list-disc ps-6">
+                <li>運用 Gemini 加速視覺方向探索與構圖發想。</li>
+                <li>透過 Figma 進行向量素材重組與視覺精煉。</li>
+                <li>運用 Claude 製作互動 Prototype，並協助產出正式版互動程式。</li>
+              </ul>
+            </section>
+          </div>
+        </section>
+
+        <hr class="border-line">
+
+        <!-- ===== 06 專案反思 ===== -->
+        <section aria-labelledby="reflection" class="flex flex-col gap-8">
+          <h2 id="reflection" class="text-2xl leading-[1.2] font-bold">06｜專案反思：AI 加速探索，設計判斷創造價值</h2>
+          <div class="flex flex-col gap-4">
+            <p>這次專案讓我更清楚 AI 在設計工作流程中的定位。</p>
+            <p>從初期的視覺發想、素材探索，到後續的互動 Prototype 與前端實作，AI 能夠加速許多過去需要投入大量時間的工作，讓設計師有更多空間嘗試不同方案，並更快驗證設計構想。</p>
+            <p>然而，AI 生成的結果不一定符合品牌調性，也不一定具備實際應用所需的資訊清晰度、可編輯性與技術可行性。生成結果只是起點，如何將其轉化為符合專案需求的設計，仍取決於設計師對問題的理解與判斷。</p>
+            <p>因此，我認為 AI 的價值不僅在於提升執行效率，更在於擴展設計探索的可能性，讓設計師能將更多心力投入方向建立、方案評估與細節優化。</p>
+            <p>從視覺概念的提煉、素材的重新編排，到資訊架構、互動方式的取捨與最終實作，設計師仍需要理解產品需求，整合品牌、使用體驗與技術條件，確保成果不只是視覺上成立，也能真正應用於產品之中。</p>
+            <p class="text-lg font-bold">AI 讓我有更多時間探索可能性，而設計判斷則決定哪些可能性值得被實現。</p>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <!-- ========== Footer（與 website-revamp 相同） ========== -->
+  <footer class="border-t border-neutral-200">
+    <div class="mx-auto max-w-7xl px-4 py-8 text-xs text-neutral-500">
+      <p data-zh="© 2026 方盈智 Carol Fang" data-en="© 2026 Carol Fang">© 2026 方盈智 Carol Fang</p>
+    </div>
+  </footer>
+</body>
+</html>
